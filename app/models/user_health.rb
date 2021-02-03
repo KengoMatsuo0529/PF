@@ -1,0 +1,2 @@
+class UserHealth < ApplicationRecord
+end
