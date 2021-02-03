@@ -8,4 +8,7 @@ class UserHealth < ApplicationRecord
     worst: 4
   }
   
+  has_many :users
+  has_many :health_centers
+  
 end

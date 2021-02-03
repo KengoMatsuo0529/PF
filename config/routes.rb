@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-resources :users
-resources :health_centers
-resources :user_health
+get "/" => "user/homes#top"
+get "/about" => "homes#about"
+
+resources :user_healths
 
 end
