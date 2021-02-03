@@ -1,0 +1,2 @@
+module HealthCenter::UsersHelper
+end
