@@ -5,4 +5,8 @@ class Message < ApplicationRecord
     unread: 1
   }
   
+  has_many :users
+  has_many :health_centers
+  has_many :rooms
+  
 end

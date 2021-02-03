@@ -7,6 +7,9 @@ class User < ApplicationRecord
     woman: 1,
   }       
          
+  belongs_to :user_health
+  belongs_to :room
+  belongs_to :message
   
   
 end
