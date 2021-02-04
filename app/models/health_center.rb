@@ -18,4 +18,9 @@ class HealthCenter < ApplicationRecord
   validates :email, presence: true
   validates :encrypted_password, presence: true
   
+  def self.search(health_center)
+    @health_center = HealthCenter.where("address_street LIKE?","%#{health_center}%")
+  end
+  
+  
 end
