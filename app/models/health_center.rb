@@ -4,9 +4,9 @@ class HealthCenter < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  belongs_to :user_health
-  belongs_to :room
-  belongs_to :message
+  has_many :user_healths
+  has_many :rooms
+  has_many :messages
   
   validates :name, presence: true
   validates :postcode, presence: true, length: { is: 7 }

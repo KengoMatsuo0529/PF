@@ -1,0 +1,6 @@
+<div>
+  <%= form_tag(user_health_centers_search_path, method: :get) do %>
+    <%= text_field_tag (:health_center) %>
+    <%= submit_tag "検索" %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_065255) do
+ActiveRecord::Schema.define(version: 2021_02_04_130157) do
 
   create_table "health_centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,18 +24,18 @@ ActiveRecord::Schema.define(version: 2021_02_03_065255) do
     t.string "address_street", null: false
     t.string "address_building", null: false
     t.string "phone_number", null: false
-    t.string "bussiness_hours", null: false
     t.string "image_id", null: false
     t.string "corporate_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "holiday"
     t.index ["email"], name: "index_health_centers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_health_centers_on_reset_password_token", unique: true
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "health_center_id", null: false
+    t.integer "user_id"
+    t.integer "health_center_id"
     t.integer "room_id", null: false
     t.text "message", null: false
     t.integer "checked", null: false
@@ -53,10 +53,12 @@ ActiveRecord::Schema.define(version: 2021_02_03_065255) do
   create_table "user_healths", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "health_center_id", null: false
-    t.integer "temperature", null: false
-    t.integer "condition", null: false
+    t.float "temperature", null: false
+    t.text "condition", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "transportation"
+    t.boolean "want_examination"
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_065255) do
     t.string "image_id", null: false
     t.integer "gender", null: false
     t.integer "age", null: false
-    t.string "post_code", null: false
+    t.string "postcode", null: false
     t.integer "prefecture_code", null: false
     t.string "address_city", null: false
     t.string "address_street", null: false
