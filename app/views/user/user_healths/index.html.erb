@@ -1,0 +1,8 @@
+<h2>送信した健康履歴一覧</h2>
+
+<%= @user_healths.each do |user_health| %>
+
+<%= user_health.name %>
+<%= user_health.created_at %>
+
+<% end %>
