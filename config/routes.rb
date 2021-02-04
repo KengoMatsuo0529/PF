@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
   
   
-  devise_for :health_centers, controllers: {
-    sessions:       "health_center/sessions",
-    passwords:      "health_center/passwords",
-    registrations:  "health_center/registrations"
-  }
+  devise_for :health_centers
   
-  devise_for :users, controllers: {
-    sessions:       "user/sessions",
-    passwords:      "user/passwords",
-    registrations:  "user/registrations"
-  }
-
+  devise_for :users
 
 root to: "user/homes#top"
 
@@ -20,7 +11,7 @@ namespace :user do
 
   get "homes/about" => "homes#about"
   get "user_healths/confirm" => "user_healths#confirm"
-  get "health_centers/:id" => "health_centers#search"
+  get "health_centers/search" => "health_centers#search"
   
   resources :user_healths, only: [:new, :create, :index, :show]
   resources :users, only: [:show, :edit, :update, :destroy]

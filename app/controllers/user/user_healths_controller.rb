@@ -20,7 +20,11 @@ class User::UserHealthsController < ApplicationController
   end
   
   def index
-    @user_healths = current_user.user_health.all
+    @user_healths = UserHealth.all
+  end
+  
+  def show
+    @user_health = UserHealth.find(params[:id])
   end
   
 
