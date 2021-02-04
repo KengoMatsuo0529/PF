@@ -2,7 +2,8 @@
 
 <%= @user_healths.each do |user_health| %>
 
-<%= user_health.name %>
+<%= user_health.user.first_name %>
+<%= user_health.user.last_name %>
 <%= user_health.created_at %>
 
 <% end %>

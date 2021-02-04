@@ -5,3 +5,58 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.create!(
+  last_name: "松尾",
+  first_name: "健吾",
+  last_name_kana: "マツオ",
+  first_name_kana: "ケンゴ",
+  email: "testtest@test.com",
+  password: "012345",
+  postcode: "1234567",
+  address_city: "東京都",
+  address_street: "渋谷区",
+  address_building: "神南1丁目19-11",
+  phone_number: "08034268378",
+  gender: "man",
+  age: "27",
+  image_id: "1",
+  prefecture_code: "1"
+  )
+
+UserHealth.create!(
+  user_id: 1,
+  health_center_id: 1,
+  temperature: "32",
+  condition: "頭痛・鼻水",
+  transportation: "自転車",
+  want_examination: "false"
+  )
+
+Message.create!(
+  health_center_id: 1,
+  user_id: 1,
+  room_id: 1,
+  message: "PCR検査を受けたいのですが",
+  checked: "read"
+  )
+
+Room.create!(
+    user_id: 1,
+    health_center_id: 1,
+    )
+
+HealthCenter.create!(
+    name: "大田区保健所",
+    postcode: "1234567",
+    address_city: "東京都",
+    address_street: "大田区",
+    address_building: "西嶺町23",
+    phone_number: "0337560529",
+    corporate_number: "1234567891234",
+    holiday: "土曜日",
+    image_id: 1,
+    email: "a@a",
+    password: "012345"
+    )
