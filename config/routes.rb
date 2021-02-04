@@ -18,20 +18,20 @@ root to: "user/homes#top"
 
 namespace :user do
 
-  get "homes/about" => "user/homes#about"
-  get "user_healths/confirm" => "user/user_healths#confirm"
-  get "health_centers/:id" => "user/health_centers#search"
+  get "homes/about" => "homes#about"
+  get "user_healths/confirm" => "user_healths#confirm"
+  get "health_centers/:id" => "health_centers#search"
   
   resources :user_healths, only: [:new, :create, :index, :show]
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :health_centers, only: [:index, :show]
-  
+
 end
 
 namespace :health_centers do
   
-  get "health_center/homes/about" => "health_center/homes#about"
-  get "health_center/users/search" => "health_center/users#search"
+  get "/homes/about" => "homes#about"
+  get "/users/:id" => "users#search"
   
   resources :users, only: [:index, :show]
   resources :user_healths, only: [:index, :show]
