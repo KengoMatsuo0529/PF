@@ -1,7 +1,13 @@
-<h2>送信した健康履歴一覧</h2>
 
 <%= @user_healths.each do |user_health| %>
 
+<div class="list-group">
+  <h2>送信した健康履歴一覧</h2>
+  
+  <a href="#" list-group-item list-group-item-action>ユーザーの検索<br />チャットによる問い合わせ</a>
+  <a href="#" list-group-item list-group-item-action>健康状態の確認</a>
+  <a href="#" list-group-item list-group-item-action>チャット一覧</a>
+</div>
 <%= user_health.user.first_name %>
 <%= user_health.user.last_name %>
 <%= user_health.created_at %>

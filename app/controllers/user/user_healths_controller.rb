@@ -7,6 +7,7 @@ class User::UserHealthsController < ApplicationController
   
   def confirm
     @user_health = UserHealth.find(params[:id])
+    @user = current_user.user
   end
   
   def create

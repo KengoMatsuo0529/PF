@@ -18,10 +18,11 @@ namespace :user do
 
 end
 
-namespace :health_centers do
+namespace :health_center do
   
   get "/homes/about" => "homes#about"
-  get "/users/:id" => "users#search"
+  get "/users/search" => "users#search"
+  get "/chats/search" => "chats#search"
   
   resources :users, only: [:index, :show]
   resources :user_healths, only: [:index, :show]
