@@ -1,0 +1,31 @@
+<h2>健康状態の確認画面</h2>
+
+<%= form_with model:@user_health, method:post, local:true do |f| %>
+
+<table>
+  <thead>
+    <tr>
+      <th>熱</th>
+      <th>現在の体調</th>
+      <th>移動手段</th>
+      <th>PCR検査の希望</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user_health.temperature %></td>
+      <td><%= @user_health.condition %></td>
+      <td><%= @user_health.transportation %></td>
+      <td><%= @user_health.want_examination %></td>
+    </tr>
+  </tbody>
+</table>
+    <%= f.hidden_field :first_name, :value => @user.first_name %>
+    <%= f.hidden_field :last_name, :value => @user.last_name %>
+    <%= f.hidden_field :first_name_kana, :value => @user.first_name_kana %>
+    <%= f.hidden_field :last_name_kana, :value => @user.first_name_kana %>
+    <%= f.hidden_field :created_at, :value => @user_health.created_at %>
+
+
+
+<%= f.submit "送信する", class:"btn btn-success" %>

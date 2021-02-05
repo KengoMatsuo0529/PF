@@ -21,4 +21,16 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :encrypted_password, presence: true
 
+  def self.search(search)
+    if search
+        User.where(['first_name_kana LIKE? OR last_name_kana LIKE? OR phone_number LIKE?', "%#{search}%","%#{search}%","%#{search}%"])
+    else
+        User.all
+    end
+  end
+  
+  def full_name
+    self.last_name + self.first_name
+  end
+
 end

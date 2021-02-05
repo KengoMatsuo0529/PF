@@ -1,12 +1,11 @@
 class User::HealthCentersController < ApplicationController
   
   def index
-    @health_center = HealthCenter.all
+    @health_centers = HealthCenter.all
   end
   
   def search
-    health_center = params[:health_center]
-    @health_center = HealthCenter.search(health_center)
+    @health_centers = HealthCenter.search(params[:search])
   end
    
   def show
