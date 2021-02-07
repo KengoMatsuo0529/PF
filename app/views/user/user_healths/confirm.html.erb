@@ -1,6 +1,6 @@
 <h2>健康状態の確認画面</h2>
 
-<%= form_with model:@user_health, method:post, local:true do |f| %>
+<%= form_with model: @user_health, url: user_user_healths_path, method: :post, local:true do |f| %>
 
 <table>
   <thead>
@@ -20,12 +20,9 @@
     </tr>
   </tbody>
 </table>
-    <%= f.hidden_field :first_name, :value => @user.first_name %>
-    <%= f.hidden_field :last_name, :value => @user.last_name %>
-    <%= f.hidden_field :first_name_kana, :value => @user.first_name_kana %>
-    <%= f.hidden_field :last_name_kana, :value => @user.first_name_kana %>
-    <%= f.hidden_field :created_at, :value => @user_health.created_at %>
-
-
-
+    <%= f.hidden_field :temperature %>
+    <%= f.hidden_field :condition %>
+    <%= f.hidden_field :transportation %>
+    <%= f.hidden_field :want_examination %>
 <%= f.submit "送信する", class:"btn btn-success" %>
+<%end%>

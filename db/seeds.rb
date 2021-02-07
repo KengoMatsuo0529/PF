@@ -33,6 +33,11 @@ UserHealth.create!(
   transportation: "自転車",
   want_examination: "false"
   )
+  
+Room.create!(
+  user_id: 1,
+  health_center_id: 1,
+  )
 
 Message.create!(
   health_center_id: 1,
@@ -42,10 +47,7 @@ Message.create!(
   checked: "read"
   )
 
-Room.create!(
-    user_id: 1,
-    health_center_id: 1,
-    )
+
 
 HealthCenter.create!(
     name: "大田区保健所",
