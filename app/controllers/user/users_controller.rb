@@ -12,10 +12,10 @@ class User::UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.update!(user_params)
       redirect_to user_user_path
     else
-      render edit
+      render :edit
     end  
   end
   
@@ -23,6 +23,13 @@ class User::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.delete
     redirect_to user_user_path
+  end
+  
+  
+  private
+  
+  def user_params
+    params.require(:user).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :gender, :age, :email, :postcode, :address_city, :address_street, :address_building, :phone_number)
   end
   
 end

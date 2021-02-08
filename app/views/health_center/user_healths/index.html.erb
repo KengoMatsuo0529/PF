@@ -1,0 +1,13 @@
+<h2>送信した健康履歴一覧</h2>
+
+<div class="list-group">
+
+<% @user_healths.each do |user_health| %>
+
+  
+</div>
+<%= user_health.user.last_name %>
+<%= user_health.user.first_name %>
+<%= user_health.created_at %>
+
+<% end %>

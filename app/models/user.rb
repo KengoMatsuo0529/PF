@@ -5,7 +5,7 @@ class User < ApplicationRecord
          
   has_many :user_healths
   has_many :rooms
-  has_many :messages
+  has_many :messages, dependent: :destroy
   
   validates :last_name, presence: true
   validates :first_name, presence: true

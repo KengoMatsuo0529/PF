@@ -9,8 +9,6 @@ class User::UserHealthsController < ApplicationController
 
   def confirm
     @user_health = UserHealth.new
-    # @user = current_user
-    # @user_health = current_user.user_healths.build
     @user_health.temperature = params[:temperature]
     @user_health.condition = params[:condition]
     @user_health.transportation = params[:transportation]
@@ -26,10 +24,6 @@ class User::UserHealthsController < ApplicationController
 
   def create
     @user_health = UserHealth.new(user_health_params)
-    # @user_health = current_user.user_healths.build
-    # @user_health.temperature = params[:temperature]
-    # @user_health.condition = params[:condition]
-    # @user_health.transportation = params[:transportation]
     if params[:want_examination] == "1"
       want_examination_value = true
     elsif params[:want_examination] == "0"

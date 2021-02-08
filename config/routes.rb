@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  
+mount ActionCable.server => '/cable'
 
+  
   devise_for :health_centers
 
   devise_for :users
+  
 
 root to: "user/homes#top"
 
@@ -15,6 +19,7 @@ namespace :user do
   post "user_healths/confirm" => "user_healths#confirm"
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :health_centers, only: [:index, :show]
+  resource :room
 
 end
 
