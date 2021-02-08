@@ -1,0 +1,2 @@
+module HealthCenter::MessagesHelper
+end
