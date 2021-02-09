@@ -14,7 +14,6 @@ class HealthCenter < ApplicationRecord
   validates :address_street, presence: true
   validates :address_building, presence: true
   validates :phone_number, presence: true,length: { in: 10..11 }
-  validates :corporate_number, presence: true, length: { in: 12..13 }
   validates :email, presence: true
   validates :encrypted_password, presence: true
   

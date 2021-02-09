@@ -3,20 +3,13 @@
 <p>お住まいの市町村を入れていただくことで保健所の検索が可能です</p>
 
 <div>
-  <%= form_tag(user_health_centers_search_path, method: :get) do %>
+  <%= form_tag(user_health_centers_path, method: :get) do %>
     <%= text_field_tag :search %>
     <%= submit_tag "検索" %>
   <% end %>
 </div>
 
-<ul><% @health_centers.each do |health_center| %>
-  <li>
-    <%= health_center.name %>
-  </li>
-<% end %></ul>
-
-
-<table class="table table-hover table-inverse">
+<table class="table table-hover">
   <thead>
     <tr>
      <th></th>
@@ -29,7 +22,7 @@
      <tr>
       <td>
       </td>
-      <td><%= health_center.name %></td>
+      <td><%= link_to health_center.name,user_health_center_path(health_center.id), class: "health_center_#{health_center.id}" %></td>
      </tr>
      <% end %>
   </tbody>

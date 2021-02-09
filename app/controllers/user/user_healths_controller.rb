@@ -42,7 +42,8 @@ class User::UserHealthsController < ApplicationController
   end
 
   def index
-    @user_healths = UserHealth.all
+    @user_healths = current_user.user_healths.all
+    @user = current_user
   end
 
   def show
