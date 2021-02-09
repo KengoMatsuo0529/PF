@@ -1,15 +1,26 @@
 <h2>送信した健康履歴一覧</h2>
 
-<div class="list-group">
 
-<% @user_healths.each do |user_health| %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+     <th></th>
+     <th>名前</th>
+     <th>送信された日</th>
+     <th></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @user_healths.each do |user_health| %>
+     <tr>
+      <td></td>
+      <td><%= link_to user_health.user.last_name + user_health.user.first_name %></td>
+      <td><%= user_health.created_at %></td>
+      <td></td>
+     </tr>
+     <% end %>
+  </tbody>
   
-</div>
-<%= user_health.user.last_name %>
-<%= user_health.user.first_name %>
-<%= user_health.created_at %>
-
-<% end %>
 
 <%= paginate @user_healths %>
