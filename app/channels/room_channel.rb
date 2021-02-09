@@ -8,6 +8,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 # TODO room＿id後で消す
   def speak(data)
-    Message.create! message: data['message'], room_id: 1, checked: 1
+    Message.create! message: data['message'], room_id: data['room_id'], checked: data['checked']
   end
 end

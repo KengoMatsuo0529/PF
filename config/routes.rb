@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  
+
 mount ActionCable.server => '/cable'
 
-  
+
   devise_for :health_centers
 
   devise_for :users
-  
+
 
 root to: "user/homes#top"
 
@@ -20,7 +20,8 @@ namespace :user do
   put "/users/:id/hide" => "users#hide", as: "users_hide"
   resources :health_centers, only: [:index, :show]
   get "health_centers/search" => "health_centers#search"
-  resources :room
+  get "/room/:health_center_id" => "rooms#show", as: "chat_room"
+  # resource :room
 
 end
 
