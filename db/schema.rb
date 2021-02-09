@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_130157) do
+ActiveRecord::Schema.define(version: 2021_02_09_024915) do
 
   create_table "health_centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_02_04_130157) do
     t.string "address_street", null: false
     t.string "address_building", null: false
     t.string "phone_number", null: false
-    t.string "image_id", null: false
     t.string "corporate_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,17 +70,17 @@ ActiveRecord::Schema.define(version: 2021_02_04_130157) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "image_id", null: false
     t.integer "gender", null: false
     t.integer "age", null: false
     t.string "postcode", null: false
-    t.integer "prefecture_code", null: false
     t.string "address_city", null: false
     t.string "address_street", null: false
     t.string "address_building", null: false
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_id"
+    t.boolean "is_deleted"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

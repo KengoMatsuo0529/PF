@@ -3,22 +3,22 @@
 <%= form_with model: @user_health, url: user_user_healths_path, method: :post, local:true do |f| %>
 
 <table>
-  <thead>
     <tr>
       <th>熱</th>
-      <th>現在の体調</th>
-      <th>移動手段</th>
-      <th>PCR検査の希望</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td><%= @user_health.temperature %></td>
-      <td><%= @user_health.condition %></td>
-      <td><%= @user_health.transportation %></td>
-      <td><%= @user_health.want_examination %></td>
     </tr>
-  </tbody>
+    <tr>
+      <th>現在の体調</th>
+      <td><%= @user_health.condition %></td>
+    </tr>
+    <tr>
+      <th>移動手段</th>
+      <td><%= @user_health.transportation %></td>
+    </tr>
+    <tr>
+      <th>PCR検査の希望</th>
+      <td><%= @user_health.want_examination %></td>
+    </tr>  
 </table>
     <%= f.hidden_field :temperature %>
     <%= f.hidden_field :condition %>

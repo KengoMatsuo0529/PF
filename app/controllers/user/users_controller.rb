@@ -19,11 +19,13 @@ class User::UsersController < ApplicationController
     end  
   end
   
-  def destroy
+  def hide
     @user = User.find(params[:id])
-    @user.delete
-    redirect_to user_user_path
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
+  
   
   
   private

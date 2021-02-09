@@ -1,8 +1,27 @@
 <h2>送信した健康状態履歴の詳細</h2>
 
 
-<%= @user_health.temperature %>
-<%= @user_health.condition %>
-<%= @user_health.transportation %>
-<%= @user_health.want_examination %>
-<%= @user_health.created_at %>
+<div>
+  <table class="table table-hover">
+    <tr>
+      <th>熱</th>
+      <td><%= @user_health.temperature %></td>
+    </tr>
+    <tr>
+      <th>症状</th>
+      <td><%= @user_health.condition %></td>
+    </tr>
+    <tr>
+      <th>交通手段</th>
+      <td><%= @user_health.transportation %></td>
+    </tr>
+    <tr>
+      <th>検査希望</th>
+      <td><%= @user_health.want_examination %></td>
+    </tr>
+    <tr>
+      <th>送信日</th>
+      <td><%= @user_health.created_at %></td>
+    </tr>
+  </table>
+</div>
