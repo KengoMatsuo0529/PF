@@ -32,7 +32,8 @@ namespace :health_center do
 
   resources :users, only: [:index, :show]
   get "/users/search" => "users#search"
-
+  get "/room/:user_id" => "rooms#show", as: "chat_room"
+  get "/rooms" => "room#index", as: "chat_rooms"
   resources :user_healths, only: [:index, :show]
 
 end
