@@ -1,0 +1,10 @@
+<h2>チャット画面</h2>
+
+<div id="messages" room_id="<%= @room.id %>">
+  <%= render @messages %>
+</div>
+
+<form>
+  <label>こちらから送信できます:</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>

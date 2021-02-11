@@ -1,0 +1,2 @@
+module HealthCenter::RoomsHelper
+end

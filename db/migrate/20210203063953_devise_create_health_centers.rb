@@ -32,7 +32,16 @@ class DeviseCreateHealthCenters < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-
+      t.string :name, null: false
+      t.string :postcode, null: false
+      t.string :address_city, null: false
+      t.string :address_street, null: false
+      t.string :address_building, null: false
+      t.string :phone_number, null: false
+      t.string :bussiness_hours, null: false
+      t.string :image_id, null: false
+      t.string :corporate_number, null: false
+      
       t.timestamps null: false
     end
 

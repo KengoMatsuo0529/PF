@@ -1,0 +1,8 @@
+<h2>保健所の詳細</h2>
+
+チャットボタンを押すことで問い合わせができます
+
+<%= @health_center.name %>
+<%= @health_center.holiday %>
+
+<%= link_to "チャット", user_chat_room_path(@health_center) %>

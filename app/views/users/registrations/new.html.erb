@@ -1,28 +1,84 @@
-<h2>Sign up</h2>
+<h2>新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :last_name,"名前(苗字)" %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name,"名前(名前)" %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name_kana,"フリガナ(苗字)" %><br />
+    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name_kana,"フリガナ(名前)" %><br />
+    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
+  </div>
+
+  <div class="field">
+    <%= f.radio_button :gender, :male %>
+    <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
+    <%= f.radio_button :gender, :female %>
+    <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age,"ご年齢" %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email,"メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :postcode,"郵便番号" %><br />
+    <%= f.text_field :postcode, autofocus: true, autocomplete: "post_code" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_city,"都道府県" %><br />
+    <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_street,"市区町村" %><br />
+    <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_building,"番地" %><br />
+    <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number,"連絡先" %><br />
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password,"パスワード" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation,"パスワード(確認中用)" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
 

@@ -1,0 +1,2 @@
+module User::UserHealthsHelper
+end

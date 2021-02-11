@@ -1,0 +1,2 @@
+module HealthCenter::HomesHelper
+end
