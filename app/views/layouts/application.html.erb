@@ -10,18 +10,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   </head>
 
   <body>
 
-    <div class="wrapper">
+  <div class="wrapper">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container header-all">
           <a class="navbar-brand p-3" href="/"><i class="fas fa-link"></i>HealthLink</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
@@ -57,8 +54,6 @@
               </li>
             <% end %>
 
-
-
             </ul>
           </div>
         </div>
@@ -70,10 +65,16 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <div class="row d-flex justify-content-center text-muted mt-3">
+        <!--<ul class="footer-menu text-white">-->
+        <!-- <li>個人ログイン ｜</li>-->
+        <!-- <li>保健所ログイン ｜</li>-->
+        <!-- <li>検査所ログイン ｜</li>-->
+        <!--</ul>-->
+        <div class="text-white">
           <p>©health_link</p>
         </div>
       </div>
     </footer>
+  </div>
   </body>
 </html>
