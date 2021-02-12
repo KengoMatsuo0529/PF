@@ -1,7 +1,9 @@
-<h2>保健所の詳細</h2>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>保健所の詳細</h2>
+  </div>
 
-チャットボタンを押すことで問い合わせができます
-
+<p>チャットボタンを押すことで問い合わせができます</p>
 
 <div>
   <table class="table table-hover">
@@ -17,9 +19,10 @@
       <th>休日</th>
       <td><%= @health_center.holiday %></td>
     </tr>
-
   </table>
 </div>
+</div>
 
-
-<%= link_to "チャットする", user_chat_room_path(@health_center),class:"chat-button" %>
+<div class="my-2 mx-3">
+  <%= link_to "チャットする", user_chat_room_path(@health_center),class:"chat-button" %>
+</div>

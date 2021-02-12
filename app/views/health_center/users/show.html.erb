@@ -1,7 +1,9 @@
-<h2>ユーザーの詳細</h2>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>ユーザーの詳細</h2>
+  </div>
 
-チャットボタンを押すことで問い合わせができます
-
+<p>チャットボタンを押すことで問い合わせができます</p>
 
 <table class="table table-hover">
   <thead>
@@ -17,9 +19,12 @@
       <td></td>
       <td><%= @user.full_name %></td>
       <td><%= @user.phone_number %></td>
+      <td><%= @user.age %></td>
      </tr>
   </tbody>
  </table>
+ </div>
 
-
-<%= link_to "チャット", class:"chat-button" %>
+  <div class="my-3 mx-5">
+    <%= link_to "チャットする",health_center_chat_room_path(@user), class:"chat-button" %>
+  </div>

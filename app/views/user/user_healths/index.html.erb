@@ -1,22 +1,41 @@
-  <h2>送信した健康履歴一覧</h2>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>送信した健康履歴一覧</h2>
+  </div>
 
-
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-     <th></th>
-     <th>送信元</th>
-     <th>送信日</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_healths.each do |user_health| %>
-     <tr>
-      <td></td>
-      <td><%= link_to user_health.user.last_name + user_health.user.first_name, user_user_health_path(@user.id) %></td>
-      <td><%= user_health.created_at %></td>
-     </tr>
-     <% end %>
-  </tbody>
-</table>
+<div class="datagrid">
+  <table>
+    <thead>
+      <tr>
+        <th>送信元</th>
+        <th>送信日</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <div id="paging">
+            <ul>
+              <li><a href="#"><span>Previous</span></a></li>
+              <li><a href="#" class="active"><span>1</span></a></li>
+              <li><a href="#"><span>2</span></a></li>
+              <li><a href="#"><span>3</span></a></li>
+              <li><a href="#"><span>4</span></a></li>
+              <li><a href="#"><span>5</span></a></li>
+              <li><a href="#"><span>Next</span></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @user_healths.each do |user_health| %>
+      <tr>
+        <td><%= link_to user_health.user.last_name + user_health.user.first_name, user_user_health_path(@user.id) %></td>
+        <td><%= user_health.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
