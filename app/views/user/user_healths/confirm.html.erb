@@ -18,11 +18,13 @@
     <tr>
       <th>PCR検査の希望</th>
       <td><%= @user_health.want_examination %></td>
-    </tr>  
+    </tr>
 </table>
     <%= f.hidden_field :temperature %>
     <%= f.hidden_field :condition %>
     <%= f.hidden_field :transportation %>
     <%= f.hidden_field :want_examination %>
+    <%= f.hidden_field :health_center_id %>
+
 <%= f.submit "送信する", class:"btn btn-success" %>
 <%end%>

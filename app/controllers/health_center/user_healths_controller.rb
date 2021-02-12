@@ -8,6 +8,7 @@ class HealthCenter::UserHealthsController < ApplicationController
 
   def show
     @user_health = UserHealth.find(params[:id])
+    @user = @user_health.user
   end
   
 end

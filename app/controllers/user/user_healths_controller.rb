@@ -19,19 +19,19 @@ class User::UserHealthsController < ApplicationController
     end
     @user_health.want_examination = want_examination_value
     # health_center_idは保健所を検索して取得
-    @user_health.health_center_id = 1
+    @user_health.health_center_id = params[:health_center_id]
   end
 
   def create
     @user_health = UserHealth.new(user_health_params)
     if params[:want_examination] == "1"
-      want_examination_value = true
+      want_examination_value = "希望する"
     elsif params[:want_examination] == "0"
-      want_examination_value = false
+      want_examination_value = "希望しない"
     end
     @user_health.want_examination = want_examination_value
     # health_center_idは保健所を検索して取得
-    @user_health.health_center_id = 1
+    @user_health.health_center_id = params[:health_center_id]
     @user_health.user_id = current_user.id
     if @user_health.save
       redirect_to user_user_health_path(@user_health)

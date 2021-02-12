@@ -1,8 +1,22 @@
   <h2>送信した健康履歴一覧</h2>
 
 
-<% @user_healths.each do |user_health| %>
 
-<%= link_to user_health.user.last_name + user_health.user.first_name,user_user_health_path(@user.id)  %>
-<%= user_health.created_at %>
-<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+     <th></th>
+     <th>送信元</th>
+     <th>送信日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_healths.each do |user_health| %>
+     <tr>
+      <td></td>
+      <td><%= link_to user_health.user.last_name + user_health.user.first_name, user_user_health_path(@user.id) %></td>
+      <td><%= user_health.created_at %></td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>

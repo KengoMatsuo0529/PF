@@ -2,7 +2,24 @@
 
 チャットボタンを押すことで問い合わせができます
 
-<%= @health_center.name %>
-<%= @health_center.holiday %>
 
-<%= link_to "チャット", user_chat_room_path(@health_center) %>
+<div>
+  <table class="table table-hover">
+    <tr>
+      <th>保健所名</th>
+      <td><%= @health_center.name %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @health_center.address_street %></td>
+    </tr>
+    <tr>
+      <th>休日</th>
+      <td><%= @health_center.holiday %></td>
+    </tr>
+
+  </table>
+</div>
+
+
+<%= link_to "チャットする", user_chat_room_path(@health_center),class:"chat-button" %>

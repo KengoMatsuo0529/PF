@@ -12,7 +12,6 @@
      <th>年齢</th>
     </tr>
   </thead>
-
   <tbody>
      <tr>
       <td></td>
@@ -20,6 +19,7 @@
       <td><%= @user.phone_number %></td>
      </tr>
   </tbody>
+ </table>
 
 
-<%= link_to "チャット",health_center_chat_room_path(@user) %>
+<%= link_to "チャット", class:"chat-button" %>

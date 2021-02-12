@@ -1,4 +1,4 @@
-<h2>送信した健康履歴一覧</h2>
+<h2>送信された健康状態一覧</h2>
 
 
 <table class="table table-hover">
@@ -15,12 +15,12 @@
     <% @user_healths.each do |user_health| %>
      <tr>
       <td></td>
-      <td><%= link_to user_health.user.last_name + user_health.user.first_name %></td>
-      <td><%= user_health.created_at %></td>
+      <td><%= link_to user_health.user.last_name + user_health.user.first_name, health_center_user_health_path(user_health) %></td>
+      <td><%= user_health.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
       <td></td>
      </tr>
      <% end %>
   </tbody>
-  
+  </table>
 
 <%= paginate @user_healths %>

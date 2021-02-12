@@ -3,29 +3,25 @@
 </div>
 
 <div>
-  <div class="form_group">
     <%= form_with url: user_user_healths_confirm_path, method: :post, local:true do |f| %>
-
+  <div class="form-group">
     <%= f.label :temperature, "現在の熱" %>
     <%= f.text_field :temperature, class: "form-control" %>
-
+  </div>
+  <div class="form-group">
     <%= f.label :condition, "現在の体調" %>
     <%= f.text_field :condition, class: "form-control" %>
-
+  </div>
+  <div class="form-group">
     <%= f.label :transportation, "交通手段" %>
     <%= f.text_field :transportation, class: "form-control" %>
+  </div>
+  <div class = "form-group row">
+    <%= f.label :want_examination, "PCR検査を希望しますか？", class: "col-4" %>
+    <%= f.select :want_examination, [['希望する',0],['希望しない',1]], { selected: 0 } %>
+  </div>
 
-    <%= f.label :want_examination, "PCR検査を希望しますか？" %>
-
-    <%= f.check_box :want_examination, checked: true %>
-    <%#= f.label :want_examination, "希望します", :checked => false %>
-
-
-    <%#= f.radio_button :want_examination, class: "form-control" %>
-    <%#= f.label :want_examination, "希望しません", :checked => true %>
-
-    <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+    <%= f.submit "確認画面へ進む", class: "confirm-button" %>
 
     <% end %>
-  </div>
 </div>
