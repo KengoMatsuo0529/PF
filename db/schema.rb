@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_024915) do
+ActiveRecord::Schema.define(version: 2021_02_12_150344) do
 
   create_table "health_centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_024915) do
 
   create_table "user_healths", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "health_center_id", null: false
+    t.integer "health_center_id"
     t.float "temperature", null: false
     t.text "condition", null: false
     t.datetime "created_at", null: false

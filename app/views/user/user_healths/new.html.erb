@@ -1,8 +1,9 @@
-<div>
-  <h2>健康状態の報告</h2>
-</div>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>健康状態の報告</h2>
+  </div>
 
-<div>
+<div class="my-2">
     <%= form_with url: user_user_healths_confirm_path, method: :post, local:true do |f| %>
   <div class="form-group">
     <%= f.label :temperature, "現在の熱" %>
@@ -24,4 +25,5 @@
     <%= f.submit "確認画面へ進む", class: "confirm-button" %>
 
     <% end %>
+</div>
 </div>

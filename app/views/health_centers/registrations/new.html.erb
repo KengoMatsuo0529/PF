@@ -1,4 +1,7 @@
-<h2>新規登録</h2>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>新規登録</h2>
+  </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "health_centers/shared/error_messages", resource: resource %>
@@ -67,3 +70,5 @@
 <% end %>
 
 <%= render "health_centers/shared/links" %>
+
+</div>

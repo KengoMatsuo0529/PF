@@ -1,26 +1,43 @@
-<h2>送信された健康状態一覧</h2>
-
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-     <th></th>
-     <th>名前</th>
-     <th>送信された日</th>
-     <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user_healths.each do |user_health| %>
-     <tr>
-      <td></td>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>送信された健康状態一覧</h2>
+  </div>
+<div class="datagrid">
+  <table>
+    <thead>
+      <tr>
+       <th>名前</th>
+       <th>送信された日</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <div id="paging">
+            <ul>
+              <li><a href="#"><span>Previous</span></a></li>
+              <li><a href="#" class="active"><span>1</span></a></li>
+              <li><a href="#"><span>2</span></a></li>
+              <li><a href="#"><span>3</span></a></li>
+              <li><a href="#"><span>4</span></a></li>
+              <li><a href="#"><span>5</span></a></li>
+              <li><a href="#"><span>Next</span></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @user_healths.each do |user_health| %>
+      <tr>
       <td><%= link_to user_health.user.last_name + user_health.user.first_name, health_center_user_health_path(user_health) %></td>
       <td><%= user_health.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
-      <td></td>
-     </tr>
-     <% end %>
-  </tbody>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
+</div>
 
 <%= paginate @user_healths %>
+
+</div>

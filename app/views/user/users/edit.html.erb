@@ -1,69 +1,75 @@
-<h2>マイページの編集</h2>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2>マイページの編集</h2>
+  </div>
+
 
 <%= form_with model: @user, url: user_user_path, method: :patch, local:true do |f| %>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :last_name,"名前(苗字)" %><br />
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :first_name,"名前(名前)" %><br />
     <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :last_name_kana,"フリガナ(苗字)" %><br />
     <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
   </div>
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :first_name_kana,"フリガナ(名前)" %><br />
     <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.radio_button :gender, :male %>
     <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
     <%= f.radio_button :gender, :female %>
     <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :age,"ご年齢" %><br />
     <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :email,"メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :postcode,"郵便番号" %><br />
     <%= f.text_field :postcode, autofocus: true, autocomplete: "post_code" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :address_city,"都道府県" %><br />
     <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :address_street,"市区町村" %><br />
     <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :address_building,"番地" %><br />
     <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building" %>
   </div>
 
-  <div class="field">
+  <div class="field my-2">
     <%= f.label :phone_number,"連絡先" %><br />
     <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "更新" %>
+  <div class="actions my-2">
+    <%= f.submit "更新する", class:"chat-button" %>
   </div>
+  
+</div>
 <% end %>
