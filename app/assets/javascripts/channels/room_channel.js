@@ -9,8 +9,12 @@ appRoom = App.cable.subscriptions.create("RoomChannel", {
 
   received: function(data) {
     const messages = document.getElementById('messages');
-    messages.insertAdjacentHTML('beforeend', data['message']);
+    // var newDiv = document.createElement("div");
+    // if messages.user == current_user "me"
+    // else "other"
 
+    messages.insertAdjacentHTML('beforeend', data['message']);
+    // messages.insertAdjacentHTML("me", data['message']);
 
   },
 
