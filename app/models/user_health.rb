@@ -7,6 +7,6 @@ class UserHealth < ApplicationRecord
   validates :temperature, presence: true
   validates :condition, presence: true
   validates :transportation, presence: true
-  validates :is_active, inclusion: {in: [true, false]}
+  validates :want_examination, inclusion: {in: [true, false]}
 
 end

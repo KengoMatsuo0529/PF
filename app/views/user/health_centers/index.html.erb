@@ -42,7 +42,7 @@
      <% @health_centers.each do |health_center| %>
       <tr>
       <td><%= link_to health_center.name,user_health_center_path(health_center.id), class: "health_center_#{health_center.id}" %></td>
-      <td><%= health_center.address_street %></td>
+      <td><%= health_center.address_city + health_center.address_street %></td>
       </tr>
       <% end %>
     </tbody>

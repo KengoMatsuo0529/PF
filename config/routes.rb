@@ -14,11 +14,12 @@ namespace :user do
 
   get "homes/about" => "homes#about"
 
-  resources :user_healths, only: [:new, :create, :index, :show]
-  post "user_healths/confirm" => "user_healths#confirm"
   resources :users, only: [:show, :edit, :update, :destroy]
   put "/users/:id/hide" => "users#hide", as: "users_hide"
-  resources :health_centers, only: [:index, :show]
+  resources :health_centers, only: [:index, :show] do
+    resources :user_healths, only: [:new, :create, :index, :show]
+    post "user_healths/confirm" => "user_healths#confirm"
+  end
   get "health_centers/search" => "health_centers#search"
   get "/room/:health_center_id" => "rooms#show", as: "chat_room"
   # resource :room
