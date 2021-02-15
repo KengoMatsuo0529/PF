@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_150344) do
+ActiveRecord::Schema.define(version: 2021_02_15_124553) do
 
   create_table "health_centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_150344) do
     t.integer "checked", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_checked"
+    t.integer "healthcenter_checked"
   end
 
   create_table "rooms", force: :cascade do |t|

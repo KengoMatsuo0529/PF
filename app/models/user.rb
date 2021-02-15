@@ -1,13 +1,17 @@
 class User < ApplicationRecord
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-      
-         
+
+
   has_many :user_healths
   has_many :rooms
   has_many :messages, dependent: :destroy
-  
+
+  has_many :active_notifications, class_name: "Message", foreign_key: "user_id", dependent: :destroy
+  has_many :passive_notifications, class_name: "Message", foreign_key: "health_center_id", dependent: :destroy
+
+
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :last_name_kana, presence: true
@@ -29,11 +33,11 @@ class User < ApplicationRecord
         User.all
     end
   end
-  
+
   def full_name
     self.last_name + self.first_name
   end
-  
+
   def full_name_kana
     self.last_name_kana + self.first_name_kana
   end

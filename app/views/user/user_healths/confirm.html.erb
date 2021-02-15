@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <th>PCR検査の希望</th>
-      <td><%= @user_health.want_examination %></td>
+      <td><%= @user_health.want_examination ? "希望する" : "希望しない" %></td>
     </tr>
   </table>
 </div>
