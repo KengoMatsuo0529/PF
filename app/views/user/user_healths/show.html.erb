@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <th>検査希望</th>
-      <td><%= @user_health.want_examination %></td>
+      <td><%= @user_health.want_examination ? "希望する" : "希望しない" %></td>
     </tr>
     <tr>
       <th>送信日</th>

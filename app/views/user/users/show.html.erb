@@ -32,7 +32,7 @@
 <%= link_to "退会",user_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
 <%= link_to "編集",edit_user_user_path, class:"btn btn-success" %>
 
-<%= link_to "チャット履歴", class:"chat-button" %>
-<%= link_to "健康状態履歴", class:"chat-button" %>
+<%= link_to "チャット履歴",user_chat_room_path(@health_center), class:"chat-button" %>
+<%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
 
 </div>

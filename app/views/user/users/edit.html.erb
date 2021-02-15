@@ -26,13 +26,6 @@
   </div>
 
   <div class="field my-2">
-    <%= f.radio_button :gender, :male %>
-    <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
-    <%= f.radio_button :gender, :female %>
-    <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
-  </div>
-
-  <div class="field my-2">
     <%= f.label :age,"ご年齢" %><br />
     <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
   </div>
@@ -70,6 +63,6 @@
   <div class="actions my-2">
     <%= f.submit "更新する", class:"chat-button" %>
   </div>
-  
+
 </div>
 <% end %>

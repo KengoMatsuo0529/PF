@@ -18,19 +18,16 @@ class User::UserHealthsController < ApplicationController
       want_examination_value = false
     end
     @user_health.want_examination = want_examination_value
-    # health_center_idは保健所を検索して取得
     @user_health.health_center_id = params[:health_center_id]
   end
 
   def create
     @user_health = UserHealth.new(user_health_params)
     if params[:want_examination] == "1"
-      want_examination_value = "希望する"
+      want_examination_value = true
     elsif params[:want_examination] == "0"
-      want_examination_value = "希望しない"
+      want_examination_value = false
     end
-    # @user_health.want_examination = want_examination_value
-    # health_center_idは保健所を検索して取得
     @user_health.health_center_id = params[:health_center_id]
     @user_health.user_id = current_user.id
     if @user_health.save!
@@ -42,8 +39,8 @@ class User::UserHealthsController < ApplicationController
   end
 
   def index
-    @user_healths = current_user.user_healths.all
     @user = current_user
+    @user_healths = current_user.user_healths.all
   end
 
   def show
