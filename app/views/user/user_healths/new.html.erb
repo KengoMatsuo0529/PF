@@ -19,7 +19,7 @@
   </div>
   <div class = "form-group row">
     <%= f.label :want_examination, "PCR検査を希望しますか？", class: "col-4" %>
-    <%= f.select :want_examination, [['希望する',0],['希望しない',1]], { selected: 0 } %>
+    <%= f.select :want_examination, [['希望する',1],['希望しない',0]], { selected: 1 } %>
   </div>
 
     <%= f.submit "確認画面へ進む", class: "confirm-button" %>

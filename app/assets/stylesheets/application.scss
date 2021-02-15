@@ -20,17 +20,22 @@
   border-radius: 0 0 0 150px;
   background-color: rgba(13, 55, 95, 1);
 }
+
+.icon {
+  background-image: url("health_link.jpeg");
+  background-size: cover;
+
+}
+
 .wrapper {
   width: 100%;
 }
 
-
-
 .wrapper{
     min-height: 100vh;
-    position: relative;/*←相対位置*/
-    padding-bottom: 100px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+    position: relative;
+    padding-bottom: 100px;
+    box-sizing: border-box;
 }
 
 footer{
@@ -39,8 +44,8 @@ footer{
     background-color: rgba(13, 55, 95, 1);
     text-align: center;
     padding: 20px 0;
- position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
+    position: absolute;
+    bottom: 0;
 }
 
 ul.footer-menu li {
@@ -93,3 +98,5 @@ display: inline;
     box-sizing: border-box;
     padding: 10px;
 }
+
+.top-list table { border-collapse: collapse; text-align: left; width: 100%; } .top-list {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 9px solid #004C73; -webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px; }.toplist table td, .top-list table th { padding: 13px 9px; }.top-list table tbody td { color: #00557F; font-size: 19px;font-weight: bold; }.top-list table tbody .alt td { background: #E1EEf4; color: #00557F; }.top-list table tbody td:first-child { border-left: none; }.top-list table tbody tr:last-child td { border-bottom: none; }

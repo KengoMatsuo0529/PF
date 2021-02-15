@@ -15,6 +15,8 @@ class User::RoomsController < ApplicationController
       @room = current_user.rooms.create(health_center_id: params[:health_center_id])
     end
     @messages = Message.where(room_id: @room.id)
+    @messages.update(user_checked: true)
+
   end
   
   # private

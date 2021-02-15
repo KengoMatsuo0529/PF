@@ -4,6 +4,7 @@
 </div>
 
 <div id="messages" room_id="<%= @room.id %>">
+  <% @messages.update(healthcenter_checked: true) %>
   <%= render @messages %>
 </div>
 
@@ -12,3 +13,5 @@
   <input type="text" data-behavior="room_speaker">
 </form>
 </div>
+
+<%= render '/messages/room_channel' %>
