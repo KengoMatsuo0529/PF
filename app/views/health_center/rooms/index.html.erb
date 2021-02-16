@@ -4,7 +4,7 @@
   </div>
 
 <div class="row my-4">
-  <%= form_tag(health_center_chats_search_path, method: :get) do %>
+  <%= form_tag(health_center_chat_rooms_path, method: :get) do %>
     <%= text_field_tag (:search) %>
     <%= submit_tag "検索" %>
   <% end %>

@@ -7,6 +7,11 @@ mount ActionCable.server => '/cable'
 
 root to: "user/homes#top"
 
+scope "(:locale)", locale: /en|ja/ do
+  root "user/homes#top"
+end
+  get '/:locale' => "static_pages#home"
+
 
 
 namespace :user do
@@ -15,7 +20,9 @@ namespace :user do
 
   resources :users, only: [:show, :edit, :update, :destroy]
   put "/users/:id/hide" => "users#hide", as: "users_hide"
-  resources :health_centers, only: [:index, :show]
+  resources :health_centers, only: [:index, :show] do
+    get "autocomplete_health_center_name", on: :collection
+  end
   resources :user_healths, only: [:new, :create, :index, :show]
   post "user_healths/confirm" => "user_healths#confirm"
   get "health_centers/search" => "health_centers#search"
@@ -27,7 +34,7 @@ end
 namespace :health_center do
 
   get "/homes/about" => "homes#about"
-  get "/chats/search" => "chats#search"
+  get "/rooms/search" => "rooms#search"
 
   resources :users, only: [:index, :show]
   get "/users/search" => "users#search"

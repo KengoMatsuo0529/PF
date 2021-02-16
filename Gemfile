@@ -77,6 +77,9 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'pry-byebug', group: :development
+gem 'rails4-autocomplete'
+gem 'rails-i18n'
+
 
 gem 'dotenv-rails'
 group :production do

@@ -3,7 +3,7 @@ class HealthCenter::RoomsController < ApplicationController
   before_action :authenticate_health_center!
 
   def index
-    @rooms = Room.all.order(:id)
+    @rooms = Room.search(current_health_center.id, params[:search])
     @health_center = current_health_center
   end
 
