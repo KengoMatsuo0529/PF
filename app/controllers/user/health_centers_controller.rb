@@ -1,5 +1,8 @@
 class User::HealthCentersController < ApplicationController
 
+  autocomplete :health_center, :name, :full => true
+
+  
   def index
     @health_centers = HealthCenter.search(params[:search])
   end
