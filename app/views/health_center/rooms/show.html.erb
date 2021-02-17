@@ -3,8 +3,8 @@
   <h2>チャット画面</h2>
 </div>
 
-<div id="messages" room_id="<%= @room.id %>">
-  <% @messages.update(healthcenter_checked: true) %>
+<div id="messages" room_id="<%= @room.id %>" from='health_center' name="<%= current_health_center.name %>">
+  <% @messages.where(healthcenter_checked: false).update(healthcenter_checked: true) %>
   <%= render @messages %>
 </div>
 
