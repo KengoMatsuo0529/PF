@@ -6,7 +6,7 @@
   <table class="table table-hover">
     <tr>
       <th>名前</th>
-      <td><%= link_to @user_health.user.last_name + @user_health.user.first_name,health_center_user_path(@user) %></td>
+      <td><%= link_to @user_health.user.full_name,health_center_user_path(@user) %></td>
     </tr>
     <tr>
       <th>熱</th>

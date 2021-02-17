@@ -101,7 +101,17 @@ display: inline;
 
 .top-list table { border-collapse: collapse; text-align: left; width: 100%; } .top-list {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 9px solid #004C73; -webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px; }.toplist table td, .top-list table th { padding: 13px 9px; }.top-list table tbody td { color: #00557F; font-size: 19px;font-weight: bold; }.top-list table tbody .alt td { background: #E1EEf4; color: #00557F; }.top-list table tbody td:first-child { border-left: none; }.top-list table tbody tr:last-child td { border-bottom: none; }
 
+
+.validates-errors {
+    color:#262626; 
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px; font-weight:850;
+  }
+
 @media screen and (max-width:425px) {
 }
   
+
   
