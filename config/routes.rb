@@ -12,8 +12,6 @@ scope "(:locale)", locale: /en|ja/ do
 end
   get '/:locale' => "static_pages#home"
 
-
-
 namespace :user do
 
   get "homes/about" => "homes#about"

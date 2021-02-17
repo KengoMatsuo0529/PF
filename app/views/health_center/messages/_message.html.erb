@@ -1,4 +1,13 @@
 <div class="message">
-  <p><%= current_health_center.name %></p>
-  <%= message.message %>
+    <% if message.from == "health_center" %>
+    <div style="background-color: #000">
+      <p><%= message.health_center.name %></p>
+      <%= message.message %>
+    </div>
+    <% else %>
+    <div style="background-color: #FFF">
+      <p><%= message.user.full_name %></p>
+      <%= message.message %>
+    </div>
+    <% end %>
 </div>

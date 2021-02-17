@@ -1,5 +1,5 @@
 class User::MessagesController < ApplicationController
-  
+
   def create
     @room = Room.find(params[:id])
     @message = @room.message.build(message_params)
@@ -10,16 +10,16 @@ class User::MessagesController < ApplicationController
     reder :index
     end
   end
-  
+
   def notification
     @room = Room.find(params[:room_id])
     if params[:who] == 'user'
       msgs = Message.where(room_id: @room.id).where(user_id: current_user.id)
-      msgs.update(user_checked: true)
+      msgs.where(user_checked: false).update(user_checked: true)
     elsif params[:who] == 'healthcenter'
       msgs = Message.where(room_id: @room.id).where(health_center_id: current_health_center.id)
-      msgs.update(healthcenter_checked: true)
+      msgs.where(healthcenter_checked: false).update(healthcenter_checked: true)
     end
   end
-  
+
 end

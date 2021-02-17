@@ -8,6 +8,6 @@ class RoomChannel < ApplicationCable::Channel
   end
   def speak(data)
     room = Room.find(data['room_id'])
-    Message.create! message: data['message'], room_id: data['room_id'], checked: data['checked'], user_checked: false, healthcenter_checked: false, user_id: room.user_id, health_center_id: room.health_center_id
+    Message.create! message: data['message'], room_id: data['room_id'], checked: data['checked'], user_checked: false, healthcenter_checked: false, user_id: room.user_id, health_center_id: room.health_center_id, from: data['from']
   end
 end
