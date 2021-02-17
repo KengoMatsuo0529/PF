@@ -27,5 +27,7 @@
 
   <div class="my-3 mx-5">
     <%= link_to "チャットする",health_center_chat_room_path(@user), class:"chat-button" %>
+    <% if @user.user_healths.exists? %>
     <%= link_to "健康状態の確認",health_center_user_health_path(@user), class:"chat-button"%>
+    <% end %>
   </div>

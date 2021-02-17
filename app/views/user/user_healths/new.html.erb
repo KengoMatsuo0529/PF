@@ -5,6 +5,11 @@
 
 <div class="my-2">
     <%= form_with url: user_user_healths_confirm_path, method: :post, local:true do |f| %>
+
+    <% if @user_health.errors.any? %>
+     <p class="validates-errors">入力に誤りがあります</p>
+    <% end %>
+
   <div class="form-group">
     <%= f.label :temperature, "現在の熱" %>
     <%= f.text_field :temperature, class: "form-control" %>

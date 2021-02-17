@@ -30,10 +30,10 @@ class User::UserHealthsController < ApplicationController
     end
     @user_health.health_center_id = params[:health_center_id]
     @user_health.user_id = current_user.id
-    if @user_health.save!
+    if @user_health.save
       redirect_to user_user_health_path(@user_health)
     else
-      render new_user_user_health_path
+      render "new"
 
     end
   end
