@@ -10,6 +10,7 @@ class HealthCenter::RoomsController < ApplicationController
   def show
     @room = current_health_center.rooms.find_by(user_id: params[:user_id])
     @messages = Message.where(room_id: @room.id)
+    @user = User.find(params[:user_id])
   end
 
 end

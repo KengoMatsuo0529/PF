@@ -14,7 +14,7 @@ appRoom = App.cable.subscriptions.create("RoomChannel", {
     // var newDiv = document.createElement("div");
     // if messages.user == current_user "me"
     // else "other"
-    div = '<div style="background-color: #000"><p>' + name + '</p>' + data['message'] + '</div>'
+    div = '<div style="font-color: #000; text-align: right"><p style="color: white">' + created_at + '</p><p style="color: white">' + data['message'] + '</p></div>'
     messages.insertAdjacentHTML('beforeend', div);
 
     // messages.insertAdjacentHTML("me", data['message']);

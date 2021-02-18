@@ -1,4 +1,14 @@
 <div class="message">
-  <p><%= current_user.last_name %></p>
-  <%= message.message %>
+  <% if message.from == 'user' %>
+    <div style="font-color: #000; text-align: right">
+    <p style="color: white"><%= message.created_at.strftime('%m/%d %H:%M') %></p>
+    <p style="color: white"><%= message.message %></p>
+     </div>
+    <% else %>
+    <div>
+      <p style="color: white"><%= link_to message.health_center.name,user_health_center_path(@health_center), class: "Editlink" %>
+      <%= message.created_at.strftime('%m/%d %H:%M') %></p>
+      <p style="color: white"><%= message.message %></p>
+    </div>
+    <% end %>
 </div>

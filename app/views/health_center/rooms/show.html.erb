@@ -1,6 +1,6 @@
-<div class="container">
-<div class="row mx-auto my-4">
-  <h2>チャット画面</h2>
+<div class="container chat-back">
+<div class="row my-4 ml-4">
+  <h2 style="color: white">チャット画面</h2>
 </div>
 
 <div id="messages" room_id="<%= @room.id %>" from='health_center' name="<%= current_health_center.name %>">
@@ -8,7 +8,7 @@
   <%= render @messages %>
 </div>
 
-<form>
+<form class="mr-5 mb-3" style="text-align: right">
   <label>エンターキーで送信ができます</label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
