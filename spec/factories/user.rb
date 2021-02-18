@@ -1,19 +1,19 @@
 FactoryBot.define do
   factory :user do
-    first_name { Faker::Lorem.characters(number: 10) }
-    last_name { Faker::Lorem.characters(number: 10) }
-    first_name_kana { Faker::Lorem.characters(number: 10) }
-    last_name_kana { Faker::Lorem.characters(number: 10) }    
-    email { Faker::Internet.email }
-    introduction { Faker::Lorem.characters(number: 20) }
+    first_name { "kengo" }
+    last_name { "matsuo" }
+    first_name_kana { "ケンゴ" }
+    last_name_kana { "マツオ" }    
+    email { "k.matsuo@gmail.com" }
     password { 'password' }
     password_confirmation { 'password' }
-    age { Faker::Lorem.characters(number: 10) }
-    postcode { Faker::Lorem.characters(number: 10) }
-    address_city { Faker::Lorem.characters(number: 10) }
-    address_street { Faker::Lorem.characters(number: 10) }
-    address_building { Faker::Lorem.characters(number: 10) }
-    phone_number { Faker::Lorem.characters(number: 10) }
+    age { "27" }
+    gender { "男" }
+    postcode { "1450075" }
+    address_city { "東京都" }
+    address_street { "大田区" }
+    address_building { "西嶺町23-15" }
+    phone_number { "0337563506" }
   end
 
 end

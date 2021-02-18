@@ -1,15 +1,14 @@
 FactoryBot.define do
   factory :health_center do
-    name { Faker::Lorem.characters(number: 10) }    
-    email { Faker::Internet.email }
-    introduction { Faker::Lorem.characters(number: 20) }
+    name { "大田区保健所" }    
+    email { "k.matsuo@com" }
     password { 'password' }
     password_confirmation { 'password' }
-    postcode { Faker::Lorem.characters(number: 10) }
-    address_city { Faker::Lorem.characters(number: 10) }
-    address_street { Faker::Lorem.characters(number: 10) }
-    address_building { Faker::Lorem.characters(number: 10) }
-    phone_number { Faker::Lorem.characters(number: 10) }
-    corporate_number { Faker::Lorem.characters(number: 12) }
+    postcode { "1234567" }
+    address_city { "東京都" }
+    address_street { "大田区" }
+    address_building { "西嶺町23-15" }
+    phone_number { "0337563506" }
+    corporate_number { "123456789123" }
   end
 end

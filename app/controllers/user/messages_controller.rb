@@ -5,6 +5,7 @@ class User::MessagesController < ApplicationController
     @message = @room.message.build(message_params)
     @message.user_id = current_user.id
     @message_room = @message.room
+    @healthcenter = @message.health_center
     if massage.save
       @message_room.create_notification_message!(current_user, @message.id)
     reder :index

@@ -24,7 +24,7 @@ namespace :user do
   resources :user_healths, only: [:new, :create, :index, :show]
   post "user_healths/confirm" => "user_healths#confirm"
   get "health_centers/search" => "health_centers#search"
-  get "/room/:health_center_id" => "rooms#show", as: "chat_room"
+  get "/:health_center_id/room/" => "rooms#show", as: "chat_room"
   # resource :room
   get "/messages/notification" => "messages#notification"
 end
@@ -36,8 +36,9 @@ namespace :health_center do
 
   resources :users, only: [:index, :show]
   get "/users/search" => "users#search"
-  get "/room/:user_id" => "rooms#show", as: "chat_room"
+  get "/:user_id/room/" => "rooms#show", as: "chat_room"
   get "/rooms" => "rooms#index", as: "chat_rooms"
+
   resources :user_healths, only: [:index, :show]
 
 end
