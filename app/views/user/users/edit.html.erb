@@ -2,6 +2,10 @@
   <div class="row mx-auto my-4">
     <h2 class="title">マイページの編集</h2>
   </div>
+  
+      <% if @user.errors.any? %>
+        <p class="validates-errors">入力に誤りがあります</p>
+      <% end %>
 
 <div class="container edit-contents pt-3">
   <div class="row pl-5 pt-3">

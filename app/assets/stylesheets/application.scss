@@ -17,9 +17,10 @@
 
 
 .header-all {
-  width: 1000px;
+  width: 900px;
+  height: 100px;
   justify-content: end;
-  border-radius: 0 0 0 150px;
+  border-radius: 0 0 0 200px;
   background-color: rgba(13, 55, 95, 1);
 }
 
@@ -62,8 +63,8 @@
 .icon {
   background-image: url("Health_link.jpg");
   background-size: cover;
-  height: 80px;
-  width: 150px;
+  height: 100px;
+  width: 200px;
 
 }
 
@@ -182,6 +183,17 @@ display: inline;
 
 .Editlink {
   color: blue;
+}
+
+.top-btn {
+  position:   fixed;
+  right:      30px;
+  bottom:     90px;
+}
+
+.top-btn a {
+  width:      10px;
+  height:     10px;
 }
 
 @media screen and (max-width:425px) {
