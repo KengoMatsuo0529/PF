@@ -1,74 +1,79 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2>新規登録</h2>
+    <h2 class="title">新規登録</h2>
   </div>
 
+<div class="container signin-contents pt-2">
+  <div class="row my-5 ml-5">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "health_centers/shared/error_messages", resource: resource %>
   
    <div class="field">
     <%= f.label :name,"保健所名" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"渋谷区保健所" %>
   </div>
   
-  <div class="field">
-    <%= f.label :phone_number,"連絡先" %><br />
-    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+  <div class="field mt-3">
+    <%= f.label :phone_number,"連絡先(ハイフンなし)" %><br />
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder:"0334631211" %>
   </div>
   
-  <div class="field">
-    <%= f.label :postcode,"郵便番号" %><br />
-    <%= f.text_field :postcode, autofocus: true, autocomplete: "post_code" %>
+  <div class="field mt-3">
+    <%= f.label :postcode,"郵便番号(ハイフンなし)" %><br />
+    <%= f.text_field :postcode, autofocus: true, autocomplete: "post_code", placeholder:"1500042" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :address_city,"都道府県" %><br />
-    <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city" %>
+    <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", placeholder:"東京都" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :address_street,"市区町村" %><br />
-    <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street" %>
+    <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street", placeholder:"渋谷区" %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :address_building,"番地" %><br />
-    <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building" %>
+    <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building", placeholder:"宇田川町１−１" %>
   </div>
   
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :holiday, "定休日" %><br />
-    <%= f.text_field :holiday, autofocus: true, autocomplete: "holiday" %>
+    <%= f.text_field :holiday, autofocus: true, autocomplete: "holiday", placeholder:"土日祝日" %>
   </div>
   
-  <div class="field">
+  <div class="field mt-3">
     <%= f.label :corporate_number,"法人番号" %><br />
-    <%= f.text_field :corporate_number, autofocus: true, autocomplete: "corporate_number" %>
+    <%= f.text_field :corporate_number, autofocus: true, autocomplete: "corporate_number", placeholder:"9000020131130" %>
   </div>
   
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field mt-3">
+    <%= f.label :email,"メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"shibuya@hokenzyo.com" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field mt-3">
+    <%= f.label :password, "パスワード(6文字以上)" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="field mt-3">
+    <%= f.label :password_confirmation,"パスワード(確認用)" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="actions mt-3">
     <%= f.submit "新規登録" %>
   </div>
 <% end %>
 
-<%= render "health_centers/shared/links" %>
+</div>
+  <div class="ml-4">
+    ご登録がお済みの方は <%= link_to "こちら", new_session_path(resource_name) %>
+  </div>
 
+</div>
 </div>
