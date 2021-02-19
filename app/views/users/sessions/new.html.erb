@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row mx-auto my-4">
+    <div class="container">
+  <div class="row mx-auto my-4">
     <h2>ログイン</h2>
+  </div>
   </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,6 +29,8 @@
   </div>
 <% end %>
 
+
+</div>
 <%= render "users/shared/links" %>
 
 </div>
