@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2>ユーザーの検索</h2>
+    <h2 class="title">ユーザーの検索</h2>
   </div>
-
 <p>名前・電話番号で検索が可能です</p>
 
-<div class="row my-4">
+<div class="container center-contents pt-2">
+  <div class="row my-5 ml-5">
   <%= form_tag(health_center_users_path, method: :get) do %>
     <%= text_field_tag :search, '',  placeholder: "タナカ" %>
     <%= submit_tag "検索" %>
   <% end %>
 </div>
 
-<div class="datagrid row">
+<div class="datagrid mx-auto">
   <table>
     <thead>
       <tr>
@@ -48,5 +48,6 @@
       <% end %>
     </tbody>
   </table>
+</div>
 </div>
 </div>
