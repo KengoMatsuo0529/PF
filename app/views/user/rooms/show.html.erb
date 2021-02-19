@@ -17,4 +17,11 @@
 <div class="d-flex justify-content-end pr-1 mr-1"><%= link_to "健康状態を報告する",new_user_user_health_path(health_center_id: @room.health_center_id), class:"user_health_-button mr-5 mb-3 mt-3" %></div>
 
 <%= render '/messages/room_channel' %>
+
+<span id="top-btn">
+  <a href="#">
+    <%= image_tag asset_path('top.png'), class: 'top-btn' %>
+  </a>
+</span>
+</div>
 </div>
