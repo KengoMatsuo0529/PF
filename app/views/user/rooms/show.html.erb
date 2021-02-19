@@ -1,18 +1,20 @@
-<div class="container chat-back">
-  <div class="row my-4 ml-4">
-    <h2 style="color: white">チャット画面</h2>
+<div class="container">
+  <div class="row py-4">
+    <h2 class="title mx-auto">チャット画面</h2>
   </div>
 
+<div class="chat-back">
 <div id="messages" room_id="<%= @room.id %>" from='user' name="<%= current_user.full_name %>">
   <% @messages.where(user_checked: false).update(user_checked: true) %>
   <%= render @messages %>
 </div>
 
-<form class="mr-5 mb-3" style="text-align: right">
+<form class="pb-4 pr-5" style="text-align: right">
   <label>エンターキーで送信ができます</label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
 </div>
-<div style="text-align: right"><%= link_to "健康状態を報告する",new_user_user_health_path(health_center_id: @room.health_center_id), class:"user_health_-button mr-5 mb-3 mt-3" %></div>
+<div class="d-flex justify-content-end pr-1 mr-1"><%= link_to "健康状態を報告する",new_user_user_health_path(health_center_id: @room.health_center_id), class:"user_health_-button mr-5 mb-3 mt-3" %></div>
 
 <%= render '/messages/room_channel' %>
+</div>

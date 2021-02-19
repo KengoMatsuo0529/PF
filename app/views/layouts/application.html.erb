@@ -19,41 +19,41 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container header-all">
-          <a class="navbar-brand p-4 icon" href="/"></a>
+          <a class="navbar-brand icon" href="/"></a>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
                 <%= check_user_notification == true ? "既読" : "未読" %>
-                <%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white btn btn-default' %>
+                <%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %>
               </li>
-              <li class="nav-item">
-                <%= link_to "マイページ", user_user_path(current_user), class: 'nav-link text-white btn btn-default' %>
+              <li class="nav-item mt-4">
+                <%= link_to "マイページ", user_user_path(current_user), class: 'nav-link text-white' %>
               </li>
-              <li class="nav-item">
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-white btn btn-default' %>
+              <li class="nav-item mt-4 mr-2 pr-5">
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
               </li>
             <% elsif health_center_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "ユーザーの検索", health_center_users_path, class: 'nav-link text-white btn btn-default' %>
+              <li class="nav-item mt-4">
+                <%= link_to "ユーザーの検索", health_center_users_path, class: 'nav-link text-white' %>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mx-4">
                   <%= check_health_center_notification == true ? "既読" : "未読" %>
-                <%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white btn btn-default" %>
+                <%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %>
               </li>
-              <li class="nav-item">
-                <%= link_to 'ログアウト', destroy_health_center_session_path, method: :delete, class: 'nav-link text-white btn btn-default' %>
+              <li class="nav-item mt-4 mr-3">
+                <%= link_to 'ログアウト', destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' %>
               </li>
             <% else %>
               <li class="nav-item">
-                <%= link_to "Home", root_path, class: 'nav-link text-white btn btn-default' %>
+                <%= link_to "Home", root_path, class: 'nav-link text-white' %>
               </li>
               <li class="nav-item">
-                <%= link_to "個人のログイン", new_user_session_path, class: 'nav-link text-white btn btn-default' %>
+                <%= link_to "個人のログイン", new_user_session_path, class: 'nav-link text-white' %>
               </li>
               <li class="nav-item">
-                <%= link_to "保健所のログイン", new_health_center_session_path, class: 'nav-link text-white btn btn-default' %>
+                <%= link_to "保健所のログイン", new_health_center_session_path, class: 'nav-link text-white' %>
               </li>
             <% end %>
 
@@ -63,9 +63,7 @@
       </nav>
     </header>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+     <%= yield %>
     <footer class="footer">
       <div class="container">
         <!--<ul class="footer-menu text-white">-->

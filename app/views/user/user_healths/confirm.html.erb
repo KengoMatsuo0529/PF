@@ -1,38 +1,39 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2>健康状態の確認画面</h2>
+    <h2 class="title">健康状態の確認画面</h2>
   </div>
 
-<div class="my-2">
-<%= form_with model: @user_health, url: user_user_healths_path, method: :post, local:true do |f| %>
-</div>
+  <div class="container center-contents pt-3">
+    <div class="row my-5 pt-3">
+      <table class="table table-hover show-list">
+        <%= form_with model: @user_health, url: user_user_healths_path, method: :post, local:true do |f| %>
+      <tr>
+        <th>熱</th>
+        <td><%= @user_health.temperature %></td>
+      </tr>
+      <tr>
+        <th>現在の体調</th>
+        <td><%= @user_health.condition %></td>
+      </tr>
+      <tr>
+        <th>移動手段</th>
+        <td><%= @user_health.transportation %></td>
+      </tr>
+      <tr>
+        <th>PCR検査の希望</th>
+        <td><%= @user_health.want_examination ? "希望する" : "希望しない" %></td>
+      </tr>
+    </table>
+    </div>
+      <%= f.hidden_field :temperature %>
+      <%= f.hidden_field :condition %>
+      <%= f.hidden_field :transportation %>
+      <%= f.hidden_field :want_examination %>
+      <%= f.hidden_field :health_center_id %>
 
-<div>
-  <table class="table table-hover">
-    <tr>
-      <th>熱</th>
-      <td><%= @user_health.temperature %></td>
-    </tr>
-    <tr>
-      <th>現在の体調</th>
-      <td><%= @user_health.condition %></td>
-    </tr>
-    <tr>
-      <th>移動手段</th>
-      <td><%= @user_health.transportation %></td>
-    </tr>
-    <tr>
-      <th>PCR検査の希望</th>
-      <td><%= @user_health.want_examination ? "希望する" : "希望しない" %></td>
-    </tr>
-  </table>
+  <div class="d-flex justify-content-end pr-5 pt-2">
+    <%= f.submit "送信する", class:"btn btn-success" %>
+    <%end%>
+  </div>
+  </div>
 </div>
-</div>
-    <%= f.hidden_field :temperature %>
-    <%= f.hidden_field :condition %>
-    <%= f.hidden_field :transportation %>
-    <%= f.hidden_field :want_examination %>
-    <%= f.hidden_field :health_center_id %>
-
-<%= f.submit "送信する", class:"btn btn-success" %>
-<%end%>

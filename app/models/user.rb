@@ -25,7 +25,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { in: 10..11 }
   validates :email, presence: true
   validates :encrypted_password, presence: true
-  validates :is_deleted, inclusion: { in: [true, false] }
+  validates :is_deleted, inclusion: { in: [true, false] }, allow_blank: true
 
   def self.search(search)
     if search
@@ -41,6 +41,10 @@ class User < ApplicationRecord
 
   def full_name_kana
     self.last_name_kana + self.first_name_kana
+  end
+  
+  def active_for_authentication?
+      super && (self.is_deleted == false)
   end
 
 end
