@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2>送信した健康履歴一覧</h2>
+    <h2 class="title">送信した健康履歴一覧</h2>
   </div>
 
-<div class="datagrid">
+<div class="container center-contents pt-3">
+<div class="row my-5 pt-2">
+
+<div class="datagrid mx-auto">
   <table>
     <thead>
       <tr>
-        <th>送信元</th>
+        <th>症状</th>
         <th>送信日</th>
       </tr>
     </thead>
@@ -31,11 +34,13 @@
     <tbody>
       <% @user_healths.each do |user_health| %>
       <tr>
-        <td><%= link_to user_health.user.last_name + user_health.user.first_name, user_user_health_path(@user.id) %></td>
+        <td><%= user_health.condition %></td>
         <td><%= user_health.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+</div>
+</div>
 </div>
 </div>

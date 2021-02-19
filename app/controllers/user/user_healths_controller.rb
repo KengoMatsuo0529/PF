@@ -39,8 +39,7 @@ class User::UserHealthsController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @user_healths = current_user.user_healths.all
+    @user_healths = current_user.user_healths
   end
 
   def show
