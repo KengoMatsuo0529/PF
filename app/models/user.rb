@@ -25,7 +25,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { in: 10..11 }
   validates :email, presence: true
   validates :encrypted_password, presence: true
-  validates :is_deleted, inclusion: { in: [true, false] }, allow_blank: true
+  validates :is_deleted, inclusion: { in: [true, false] }
 
   def self.search(search)
     if search

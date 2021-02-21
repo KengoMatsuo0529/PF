@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto header-all">
             <% if user_signed_in? %>
-              <li class="nav-item ml-auto pt-5">
+              <li class="nav-item ml-auto pt-4">
                 <%= check_user_notification == true ? "既読" : "未読" %>
                 <%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %>
               </li>
