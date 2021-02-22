@@ -1,3 +1,11 @@
 // Place all the styles related to the user::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-list table { border-collapse: collapse; text-align: left; width: 100%; } 
+.top-list {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; border: 12px solid #004C73; border-radius: 20px; }
+.top-list table td, 
+.top-list table th { padding: 13px 9px; }
+.top-list table tbody td { color: #00557F; font-size: 17px ;font-weight: bold; }
+.top-list table tbody 
+.alt { background: #E1EEf4; color: #00557F; }

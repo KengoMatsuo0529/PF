@@ -5,8 +5,6 @@ mount ActionCable.server => '/cable'
   devise_for :health_centers
   devise_for :users
 
-root to: "user/homes#top"
-
 scope "(:locale)", locale: /en|ja/ do
   root "user/homes#top"
 end
@@ -21,6 +19,7 @@ namespace :user do
   resources :health_centers, only: [:index, :show] do
     get "autocomplete_health_center_name", on: :collection
   end
+  get "user_healths/confirm" => "user_healths#error"
   resources :user_healths, only: [:new, :create, :index, :show]
   post "user_healths/confirm" => "user_healths#confirm"
   get "health_centers/search" => "health_centers#search"
