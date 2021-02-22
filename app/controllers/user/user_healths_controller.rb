@@ -34,8 +34,11 @@ class User::UserHealthsController < ApplicationController
       redirect_to user_user_health_path(@user_health)
     else
       render "new"
-
     end
+  end
+
+  def error
+      redirect_to new_user_user_health_path
   end
 
   def index

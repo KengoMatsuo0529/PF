@@ -1,27 +1,43 @@
 <div class="jumbotron top-img">
-  <div class="container"><h1 class="top-message">みんなで繋がり合って、</br>助け合う</h1>
+  <div class="container">
+    <h1 class="top-message pt-5">みんなで繋がり合って、</br>助け合う</h1>
   </div>
 </div>
 
-<div class="about-img">
-  <div class="container"><h1 class="about-message">リアルタイムチャットで問い合わせ・対応ができます</h1></div>
+<!--<div class="about-img">-->
+<!--  <div class="container">-->
+<!--    <h1 class="about-message">リアルタイムチャットで問い合わせ・対応ができます</h1>-->
+<!--    <div class="test-message"><h1>リアルタイムチャットで問い合わせ・対応ができます</h1></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="section about-img">
+  <div class="txtBox inview fadeIn_left">
+    <p>リアルタイムチャットで問い合わせ・対応ができます</p>
+  </div>
 </div>
 
-  <div class="container top-list">
+
+
+  <div class="container top-list my-5">
     <div class="row">
       <table class="table">
-        <tr>
-          <td><h2>個人のお客様</h2></th>
-          <td><h3><%= link_to "保健所の検索", user_health_centers_path %></h3><br />保健所の検索とチャットによる<br />お問い合わせができます</td>
-          <td><h3><%= link_to "健康状態の報告" %></h3><br />自信の健康状態の報告ができます</td>
-          <td><h3><%= link_to "マイページ" %></h3><br />ご自身の各種履歴や個人情報の<br />確認・更新ができます</td>
-        </tr>
         <tr class="alt">
+          <td><h2>個人のお客様</h2></td>
+          <td><h3><%= link_to "保健所への問い合わせ", user_health_centers_path %></h3><br />保健所の検索とチャットによる<br />お問い合わせができます</td>
+          <td><h3><%= link_to "健康状態の報告",new_user_user_health_path %></h3><br />自信の健康状態の報告ができます</td>
+          <% if user_signed_in? %>
+          <td><h3><%= link_to "マイページ",user_user_path(current_user) %></h3><br />ご自身の各種履歴や個人情報の<br />確認・更新ができます</td>
+          <% else %>
+          <td><h3><%= link_to "マイページ",new_user_session_path %></h3><br />ご自身の各種履歴や個人情報の<br />確認・更新ができます</td>
+          <% end %>
+        </tr>
+        <tr>
           <td><h2>保健所のお客様</h2></td>
           <td><h3><%= link_to "ユーザーの検索", health_center_users_path  %></h3><br />名前や電話番号で<br />個人の検索ができます</td>
-          <td><h3><%= link_to "チャットの一覧" %></h3><br />チャットの対応はここからできます</td>
+          <td><h3><%= link_to "チャットの一覧", health_center_chat_rooms_path %></h3><br />チャットの対応はこちらからできます</td>
           <td><h3><%= link_to "健康状態の確認", health_center_user_healths_path %></h3><br />送信された健康状態は<br />こちらから確認できます</td>
         </tr>
       </table>
     </div>
-  <div>
+  </div>

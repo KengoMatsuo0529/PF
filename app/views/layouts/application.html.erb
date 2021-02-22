@@ -2,31 +2,28 @@
 <html>
   <head>
     <title>HealthLink</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
       <meta name ="viewport" content="width=device-width,initial-scale=1.0">
       <script src="https://kit.fontawesome.com/a06a79ce1c.js" crossorigin="anonymous"></script>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
-
   <body>
-
   <div class="wrapper">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light top-header">
         <div class="container">
           <a class="navbar-brand icon" href="/"></a>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto header-all">
             <% if user_signed_in? %>
               <li class="nav-item ml-auto pt-4">
-                <%= check_user_notification == true ? "既読" : "未読" %>
+              <% if check_user_notification == true %>
                 <%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %>
+              <% else %>
+                <i class="fa fa-circle" style="color:red;"><%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %></i>
+              <% end %>
               </li>
               <li class="nav-item  pr-4 pl-5 pt-5">
                 <%= link_to "マイページ", user_user_path(current_user), class: 'nav-link text-white' %>
@@ -39,8 +36,11 @@
                 <%= link_to "ユーザーの検索", health_center_users_path, class: 'nav-link text-white' %>
               </li>
               <li class="nav-item  pr-4 pl-5 pt-4">
-                  <%= check_health_center_notification == true ? "既読" : "未読" %>
-                <%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %>
+                <% if check_health_center_notification == true %>
+                  <%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %>
+                <% else %>
+                  <i class="fa fa-circle style="color:red;"><%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %></i>
+                <% end %>
               </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to 'ログアウト', destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' %>
@@ -62,21 +62,10 @@
         </div>
       </nav>
     </header>
-
-     <%= yield %>
-    <footer class="footer">
-      <div class="container">
-        <!--<ul class="footer-menu text-white">-->
-        <!-- <li>個人ログイン ｜</li>-->
-        <!-- <li>保健所ログイン ｜</li>-->
-        <!-- <li>検査所ログイン ｜</li>-->
-        <!--</ul>-->
-        <div class="text-white">
-          <p>©health_link</p>
-        </div>
-      </div>
+    <%= yield %>
+    <footer>
+      <p class="text-white">©health_link</p>
     </footer>
-  </div>
   </div>
   </body>
 </html>

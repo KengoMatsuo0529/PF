@@ -5,7 +5,6 @@ class User::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @room = Room.find_by(user_id: current_user.id)
-    @health_center = HealthCenter.find(@room.health_center_id)
   end
 
   def edit
