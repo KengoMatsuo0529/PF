@@ -16,7 +16,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require autocomplete-rails
 //= require_tree .
 
 $(function() {
