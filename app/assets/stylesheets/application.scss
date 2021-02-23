@@ -61,10 +61,9 @@
     animation: SlideIn 2.0s ;
 }
 
-/* CSSアニメーションの設定 */
 @keyframes SlideIn {
   0% {
-    opacity: 0;/*初期状態では透明に*/
+    opacity: 0;
     transform: translateX(64px);
   }
   100% {
@@ -73,6 +72,10 @@
   }
 }
 
+.notifi {
+  margin-top:12px;
+  font-weight: bold;
+}
 
 .top-header {
   padding-top:0px;
@@ -230,11 +233,6 @@ footer{
 /*===========
 base
 ===========*/
-
-html {
-  margin: 0;
-  padding: 0;
-}
 
 * {
   box-sizing: border-box;

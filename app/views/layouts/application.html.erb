@@ -20,9 +20,9 @@
             <% if user_signed_in? %>
               <li class="nav-item ml-auto pt-4">
               <% if check_user_notification == true %>
-                <%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %>
+                <p class="mt-4"><%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %></p>
               <% else %>
-                <i class="fa fa-circle" style="color:red;"><%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %></i>
+                <p class="fa fa-circle mt-3" style="color:red;"><%= link_to '保健所の検索・問い合わせ', user_health_centers_path, class: 'nav-link text-white' %></p>
               <% end %>
               </li>
               <li class="nav-item  pr-4 pl-5 pt-5">
@@ -37,9 +37,9 @@
               </li>
               <li class="nav-item  pr-4 pl-5 pt-4">
                 <% if check_health_center_notification == true %>
-                  <%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %>
+                  <p class="mt-4"><%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %></p>
                 <% else %>
-                  <i class="fa fa-circle style="color:red;"><%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %></i>
+                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to 'チャット一覧', health_center_chat_rooms_path, class: "nav-link text-white" %></p>
                 <% end %>
               </li>
               <li class="nav-item mx-4 pt-5">
