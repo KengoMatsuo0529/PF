@@ -6,29 +6,22 @@
 <div class="container center-contents pt-2">
   <div class="row my-5 ml-5">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email,"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.label :email,"メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field mt-3">
+        <%= f.label :password,"パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <div class="actions pt-4">
+        <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field mt-3">
-    <%= f.label :password,"パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions pt-4">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-
-</div>
-  <div class="pl-5">
-    登録がお済みでない方は<%= link_to "こちら", new_registration_path(resource_name) %><br />
-    <br/><%= render "users/shared/links" %>
-
-  </div>
-
-
-
+    <div class="pl-5 signup-link">
+      登録がお済みでない方は<%= link_to "こちら", new_registration_path(resource_name) %><br />
+      <br/><div class="pass-change"><%= render "users/shared/links" %></div>
+    </div>
 </div>
 </div>

@@ -38,7 +38,7 @@ class User::UserHealthsController < ApplicationController
   end
 
   def error
-      redirect_to new_user_user_health_path
+    redirect_to new_user_user_health_path
   end
 
   def index

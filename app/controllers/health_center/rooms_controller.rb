@@ -1,5 +1,4 @@
 class HealthCenter::RoomsController < ApplicationController
-
   before_action :authenticate_health_center!
 
   def index
@@ -16,5 +15,4 @@ class HealthCenter::RoomsController < ApplicationController
     @user = User.find(params[:user_id])
     @messages.update(healthcenter_checked: true)
   end
-
 end

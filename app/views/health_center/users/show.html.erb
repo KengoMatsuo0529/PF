@@ -2,36 +2,34 @@
   <div class="row mx-auto my-4">
     <h2 class="title">ユーザーの詳細</h2>
   </div>
-<p>チャットボタンを押すことで問い合わせができます</p>
+    <p>チャットボタンを押すことで問い合わせができます</p>
 
 <div class="container center-contents pt-3">
   <div class="row my-5 pt-3">
     <table class="table table-hover show-list">
-        <tr>
-          <th>名前</th>
-          <td><%= @user.full_name %></td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td><%= @user.phone_number %></td>
-        </tr>
-        <tr>
-          <th>年齢</th>
-          <td><%= @user.age %></td>
-        </tr>
-        <tr>
-          <th>性別</th>
-          <td><%= @user.gender %></td>
-        </tr>
+      <tr>
+        <th>名前</th>
+        <td><%= @user.full_name %></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= @user.phone_number %></td>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <td><%= @user.age %></td>
+      </tr>
+      <tr>
+        <th>性別</th>
+        <td><%= @user.gender %></td>
+      </tr>
     </table>
- </div>
-
+  </div>
   <div class="d-flex justify-content-end pr-5">
     <% if @user.user_healths.exists? %>
       <%= link_to "健康状態の確認",health_center_user_health_path(@user), class:"chat-button"%>
     <% end %>
       <%= link_to "チャットする",health_center_chat_room_path(@user), class:"chat-button" %>
   </div>
-
 </div>
 </div>

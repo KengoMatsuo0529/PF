@@ -1,6 +1,6 @@
 class User::HealthCentersController < ApplicationController
 
-  autocomplete :health_center, :name, :full => true
+  autocomplete :health_center, :name, full: true
 
   
   def index
@@ -14,6 +14,5 @@ class User::HealthCentersController < ApplicationController
     #     @checked = true
     #   end
   end
-
 
 end

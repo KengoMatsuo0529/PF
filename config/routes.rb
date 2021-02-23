@@ -12,8 +12,6 @@ end
 
 namespace :user do
 
-  get "homes/about" => "homes#about"
-
   resources :users, only: [:show, :edit, :update, :destroy]
   put "/users/:id/hide" => "users#hide", as: "users_hide"
   resources :health_centers, only: [:index, :show] do

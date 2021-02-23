@@ -1,5 +1,4 @@
 class HealthCenter::UsersController < ApplicationController
-
   def index
     @messages = current_health_center.messages
     user_ids = @messages.map(&:user_id)
@@ -11,4 +10,3 @@ class HealthCenter::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-

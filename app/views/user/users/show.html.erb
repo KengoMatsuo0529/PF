@@ -23,7 +23,7 @@
       <td><%= @user.address_city + @user.address_street + @user.address_building %></td>
     </tr>
     <tr>
-      <th>メールアドバイス</th>
+      <th>メールアドレス</th>
       <td><%= @user.email %></td>
     </tr>
   </table>
@@ -32,16 +32,16 @@
 <div>
   <div class="mb-5 pl-3">
     <% if @room %>
-  <%= link_to "チャット履歴",user_chat_room_path(@room.health_center), class:"chat-button" %>
-  <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
+      <%= link_to "チャット履歴",user_chat_room_path(@room.health_center), class:"chat-button" %>
+      <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
     <% else %>
-  <%= link_to "チャット履歴", "", class:"chat-button disabled" %>
-  <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
+      <%= link_to "チャット履歴", "", class:"chat-button disabled" %>
+      <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
     <% end %>
-   <div class="d-flex justify-content-end pr-5 mr-5 mb-2">
-    <%= link_to "編集",edit_user_user_path, class:"btn btn-success" %>
+    <div class="d-flex justify-content-end pr-5 mr-5 mb-2">
+      <%= link_to "編集",edit_user_user_path, class:"btn btn-success" %>
+    </div>
   </div>
-</div>
 </div>
 </div>
 </div>

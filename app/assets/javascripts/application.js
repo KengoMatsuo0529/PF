@@ -18,12 +18,27 @@
 //= require turbolinks
 //= require_tree .
 
+// $(function(){
+//   // let accordionBtn = $('navbar-toggler')
+//   $('navbar-toggler').click(function(){
+//     alert('test')
+//   })
+// })
+
+document.addEventListener("DOMContentLoaded",function(){
+  let btn = document.getElementsByClassName('navbar-toggler').item(0)
+  let menu = document.getElementById('navbarSupportedContent')
+  btn.addEventListener('click',function(){
+    document.getElementById('navbarSupportedContent').classList.toggle('collapse')
+  })
+})
+
 $(function() {
     var topBtn = $('#top-btn a');
     topBtn.hide();
     $(window).scroll(function(){
-         if ($(this).scrollTop() > 100) {
-             topBtn.fadeIn(1000);
+         if ($(this).scrollTop() > 4000) {
+             topBtn.fadeIn(2000);
          } else {
              topBtn.fadeOut();
          }
@@ -43,3 +58,4 @@ $(function() {
     }
   });
   });
+

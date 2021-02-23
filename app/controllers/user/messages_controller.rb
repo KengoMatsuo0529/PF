@@ -1,5 +1,4 @@
 class User::MessagesController < ApplicationController
-
   def create
     @room = Room.find(params[:id])
     @message = @room.message.build(message_params)
@@ -8,7 +7,7 @@ class User::MessagesController < ApplicationController
     @healthcenter = @message.health_center
     if massage.save
       @message_room.create_notification_message!(current_user, @message.id)
-    reder :index
+      reder :index
     end
   end
 
@@ -22,5 +21,4 @@ class User::MessagesController < ApplicationController
       msgs.where(healthcenter_checked: false).update(healthcenter_checked: true)
     end
   end
-
 end
