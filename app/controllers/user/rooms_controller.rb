@@ -1,7 +1,5 @@
 class User::RoomsController < ApplicationController
-
   before_action :authenticate_user!
-
 
   # def create
   #   @message = Message.new
@@ -17,7 +15,6 @@ class User::RoomsController < ApplicationController
     @messages = Message.where(room_id: @room.id)
     @messages.update(user_checked: true)
     @health_center = HealthCenter.find(params[:health_center_id])
-
   end
 
   # private
@@ -25,5 +22,4 @@ class User::RoomsController < ApplicationController
   # def message_params
   #   params.permit(:message, :checked)
   # end
-
 end

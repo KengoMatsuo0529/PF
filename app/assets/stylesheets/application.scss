@@ -43,6 +43,7 @@
     border-radius: 30px;
     padding: 20px;
     bottom: 20%;
+    padding-top: 20px;
 }
 
 .about-img {
@@ -50,26 +51,6 @@
   width: 100%;
   background-image: url("about-img.jpg");
   background-size: cover;
-}
-
-.about-message {
-  font-size: 45px;
-    color: black;
-    width: fit-content;
-    border-radius: 30px;
-    padding-top: 350px;
-    animation: SlideIn 2.0s ;
-}
-
-@keyframes SlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(64px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .notifi {
@@ -146,6 +127,7 @@ footer{
 .datagrid {
   width: 80%;
 }
+
 .datagrid table { border-collapse: collapse; text-align: left; width: 100%; }
 .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 3px solid #004C73; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
 .datagrid table td,
@@ -209,8 +191,6 @@ footer{
   bottom:     90px;
 }
 
-
-
 .fadeIn_left {
   opacity: 0;
   transform: translate(-50%, 0);
@@ -229,10 +209,6 @@ footer{
   font-size: 50px;
   font-weight: bold;
 }
-
-/*===========
-base
-===========*/
 
 * {
   box-sizing: border-box;
@@ -268,14 +244,104 @@ base
 
 
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:375px) {
 
-  .top-img {
-  background-size: cover;
+* {
+  padding: 0px;
+  margin: 0px;
 }
+
+.header-all {
+  width: 100%;
+}
+
+.top-img {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:188px;
+}
+
+.top-message {
+    font-size: 18px;
+    border-radius: 30px;
+    padding-top:0px;
+}
+
+.about-img {
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:188px;
+
+}
+
+.txtBox p {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 4%;
+}
+
+.icon {
+  width: 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+
+}
+
+.section {
+  margin: 0;
+  padding: 0;
+}
+
+.top-list { margin: 10% 0%; }
+.top-list table { border-collapse: collapse; text-align: left; width: 100%; }
+.top-list {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; border: 12px solid #004C73; border-radius: 20px; }
+.top-list table td,
+.top-list table th { padding: 13px 9px; }
+.top-list table tbody td { color: #00557F; font-size: 7px ;font-weight: bold; }
+.top-list table tbody td h3 { font-size: 12px; }
+.top-list table tbody td h2 { font-size: 15px; }
+.alt { background: #E1EEf4; color: #00557F; }
+
+
+footer {
+  width: 100%;
+  height: 15px;
+  padding: 5% 0;
+  bottom: 0%;
+}
+
+.nav-item {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.wrapper {
+  padding-bottom: 10%;
+}
+
+.signin-link {
+  padding-top: 1% 0%;
+}
+
+.pass-change {
+  padding: 20% 0%;
+}
+
+.top-btn {
+  width: 40px;
+  height: 40px;
+  right:      1px;
+  bottom:     45px;
+}
+
+.confirm-button {
+  margin-top: 5%;
+  margin-right: 15%;
 }
 
 
-
-
+}
 

@@ -1,28 +1,28 @@
 require 'rails_helper'
 
-describe Message,type: :model do
-   describe '#create' do
+describe Message, type: :model do
+  describe '#create' do
     before do
       @message = FactoryBot.build(:message)
     end
 
-     it "is valid with a name, a phone_number, email, and password" do
-         expect(@message).to be_valid
-     end
+    it 'is valid with a name, a phone_number, email, and password' do
+      expect(@message).to be_valid
+    end
 
-    it "is invalid without a message" do
-      @message.message = ""
+    it 'is invalid without a message' do
+      @message.message = ''
       @message.valid?
       expect(@message.errors.full_messages).to include("can't be blank")
     end
 
-    it "is invalid without an user_checked" do
-      @message.user_checked = ""
+    it 'is invalid without an user_checked' do
+      @message.user_checked = ''
       @message.valid?
       expect(@message.errors.full_messages).to include("Email can't be blank")
     end
 
-    it "is invalid with a duplicate email address" do
+    it 'is invalid with a duplicate email address' do
       @message.save
       another_message = FactoryBot.build(:message)
       another_message.email = @message.email
@@ -43,7 +43,7 @@ describe Message,type: :model do
     end
 
     it 'is valid with password length > 6' do
-      @message.password = "123456"
+      @message.password = '123456'
       expect(@message).to be_valid
     end
 

@@ -1,25 +1,22 @@
 <div class="container">
-<div class="row my-4 ml-4">
-  <h2 class="title mx-auto">チャット画面</h2>
-</div>
+  <div class="row my-4 ml-4">
+    <h2 class="title mx-auto">チャット画面</h2>
+  </div>
 
 <div class="chat-back">
-<div id="messages" room_id="<%= @room.id %>" from='health_center' name="<%= current_health_center.name %>">
-  <% @messages.where(healthcenter_checked: false).update(healthcenter_checked: true) %>
-  <%= render @messages %>
+  <div id="messages" room_id="<%= @room.id %>" from='health_center' name="<%= current_health_center.name %>">
+    <% @messages.where(healthcenter_checked: false).update(healthcenter_checked: true) %>
+    <%= render @messages %>
+  </div>
+  <form class="pb-4 pr-5" style="text-align: right">
+    <label>エンターキーで送信ができます</label><br>
+    <input type="text" data-behavior="room_speaker">
+  </form>
 </div>
-
-<form class="pb-4 pr-5" style="text-align: right">
-  <label>エンターキーで送信ができます</label><br>
-  <input type="text" data-behavior="room_speaker">
-</form>
-</div>
-
-<%= render '/messages/room_channel' %>
-
-<span id="top-btn">
-  <a href="#">
-    <%= image_tag asset_path('rise.png'), class: 'top-btn' %>
-  </a>
-</span>
+  <%= render '/messages/room_channel' %>
+  <span id="top-btn">
+    <a href="#">
+      <%= image_tag asset_path('rise.png'), class: 'top-btn' %>
+    </a>
+  </span>
 </div>

@@ -7,7 +7,6 @@ class Message < ApplicationRecord
   }, _prefix: true
   
 
-
   belongs_to :user, optional: true
   belongs_to :health_center, optional: true
   belongs_to :room

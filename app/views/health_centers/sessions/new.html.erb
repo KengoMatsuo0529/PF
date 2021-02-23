@@ -10,24 +10,18 @@
     <%= f.label :email,"メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
   <div class="field mt-3">
     <%= f.label :password,"パスワード" %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
   <div class="actions pt-4">
     <%= f.submit "ログイン" %>
   </div>
-<% end %>
-
+  <% end %>
 </div>
-
   <div class="pl-5">
     登録がお済みでない方は <%= link_to "こちら", new_registration_path(resource_name) %><br />
-
     <br/><%= render "health_centers/shared/links" %>
   </div>
-
 </div>
 </div>
