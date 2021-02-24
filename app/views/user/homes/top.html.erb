@@ -19,15 +19,16 @@
       <% if user_signed_in? %>
         <td><h3><%= link_to user_user_path(current_user) do %><%= t :mypage %><% end %></h3><br /><%= t :my_page %><br /><%= t :edit %></td>
       <% else %>
-        <td><h3><%= link_to new_user_session_path do %><%= t :mypage %><% end %></h3><br /><%= t :my_page %><br /><%= t :edit %></td>
+        <td><h3><%= link_to new_user_session_path do %><%= t :mypage %><% end %></h3><br /><%= t :my_page %><br /><%= t :edit2 %></td>
       <% end %>
       </tr>
       <tr>
         <td><h2><%= t :Health_Center %></h2></td>
-        <td><h3><%= link_to health_center_users_path do %><%= t :user_search %><% end %></h3><br /><%= t :search_user %><br /><%= t :with_name %></td>
+        <td><h3><%= link_to health_center_users_path do %><%= t :search_user %><% end %></h3><br /><%= t :user_search2 %><br /><%= t :with_name %></td>
         <td><h3><%= link_to  health_center_chat_rooms_path do %><%= t :all_chats %><% end %></h3><br /><%= t :chats_index %></td>
         <td><h3><%= link_to  health_center_user_healths_path do %><%= t :confirm_health %><% end %></h3><br /><%= t :confirm_userhealth %></td>
       </tr>
     </table>
   </div>
 </div>
+<div class="english-message">You can change language with insert "/en" at the end of URL.</div>

@@ -8,7 +8,7 @@
   <div class="row my-5 ml-5">
     <%= form_tag(user_health_centers_path, method: :get) do %>
       <%= text_field_tag :search, '',  placeholder: "渋谷区" %>
-      <%= submit_tag "検索" %>
+      <%= submit_tag "#{ t :search }" %>
     <% end %>
   </div>
   <div class="datagrid mx-auto">

@@ -41,7 +41,7 @@ en:
   health_center_login: HealthCenter Login
   people_signin: HERE
   people_signup: HERE 
-  sign_in: SignUp
+  sign_up: SignUp
   log_in: Log in
   log_out: Log out
   email: Email
@@ -56,8 +56,8 @@ en:
   can_contact: to health center
   your_healath: To report your condition
   my_page: You can confirm & edit
-  edit: your profile
-  user_search: You can search user
+  edit2: your profile
+  user_search2: You can search user
   with_name: with name or phonenumber
   chats_index: All chat history
   confirm_userhealth: Check users conditions
@@ -90,14 +90,33 @@ en:
   last_chat: Last Chat
   edit: Edit
   edit_mypage: Edit Profile
+  withdrawal: Withdrawal
+  last_name: Last name
+  first_name: First name
+  last_name_kana: Last name kana
+  first_name_kana: First name kana
+  postcode: Postcode
+  address_city: Address city
+  address_street: Address street
+  address_building: Address building
+  update: Update
+  male: Male
+  female: Female
+  character: character or more
+  conf_pass: Password for confirmation
+  reset_pass: Sent email for reset password
+  search: search
+  want: want
+  none: none
+  confirm: OK
+  sent: Sent
+
+
+
+
 
 
   
-
-
-
-
-
 
 
 

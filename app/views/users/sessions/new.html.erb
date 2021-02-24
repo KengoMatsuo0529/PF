@@ -7,15 +7,15 @@
   <div class="row my-5 ml-5">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
+        <%= f.label :email, "#{ t :email }" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field mt-3">
-        <%= f.label :password,"パスワード" %><br />
+        <%= f.label :password,"#{ t :password }" %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
       <div class="actions pt-4">
-        <%= f.submit "ログイン" %>
+        <%= f.submit "#{ t :log_in }" %>
       </div>
     <% end %>
   </div>

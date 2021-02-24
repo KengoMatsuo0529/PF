@@ -10,54 +10,54 @@
   <div class="row pl-5 pt-3">
     <%= form_with model: @user, url: user_user_path, method: :patch, local:true do |f| %>
       <div class="field my-3">
-        <%= f.label :last_name, "名前(苗字)" %><br />
+        <%= f.label :last_name, "#{ t :last_name }" %><br />
         <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
       </div>
       <div class="field my-3">
-        <%= f.label :first_name,"名前(名前)" %><br />
+        <%= f.label :first_name,"#{ t :first_name }" %><br />
         <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
       </div>
       <div class="field my-3">
-        <%= f.label :last_name_kana,"フリガナ(苗字)" %><br />
+        <%= f.label :last_name_kana,"#{ t :last_name_kana }" %><br />
         <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
       </div>
       <div class="field my-3">
-        <%= f.label :first_name_kana,"フリガナ(名前)" %><br />
+        <%= f.label :first_name_kana,"#{ t :first_name_kana }" %><br />
         <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
       </div>
       <div class="field my-3">
-        <%= f.label :age,"ご年齢" %><br />
+        <%= f.label :age,"#{ t :age }" %><br />
         <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
       </div>
       <div class="field my-3">
-        <%= f.label :email,"#{t :email}" %><br />
+        <%= f.label :email,"#{ t :email}" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field my-3">
-        <%= f.label :postcode,"郵便番号" %><br />
+        <%= f.label :postcode,"#{ t :postcode }" %><br />
         <%= f.text_field :postcode, autofocus: true, autocomplete: "post_code" %>
       </div>
       <div class="field my-3">
-        <%= f.label :address_city,"都道府県" %><br />
+        <%= f.label :address_city,"#{ t :address_city }" %><br />
         <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city" %>
       </div>
       <div class="field my-3">
-        <%= f.label :address_street,"市区町村" %><br />
+        <%= f.label :address_street,"#{ t :address_street }" %><br />
         <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street" %>
       </div>
       <div class="field my-3">
-        <%= f.label :address_building,"番地" %><br />
+        <%= f.label :address_building,"#{ t :address_building }" %><br />
         <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building" %>
       </div>
       <div class="field my-3">
-        <%= f.label :phone_number,"連絡先" %><br />
+        <%= f.label :phone_number,"#{ t :phone }" %><br />
         <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
       </div>
       <div class="actions my-3">
-        <%= f.submit "更新する", class:"chat-button" %>
+        <%= f.submit "#{ t :update }", class:"chat-button" %>
       </div>
-
-      <%= link_to "退会",user_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
+    <div>
+      <%= link_to user_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" do %><%= t :withdrawal %><% end %>
     </div>
     <% end %>
 </div>
