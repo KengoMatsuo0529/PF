@@ -20,8 +20,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto header-all">
-
+          <ul class="navbar-nav ml-auto header-all" id="pc-menu">
             <% if user_signed_in? %>
               <li class="nav-item ml-auto pt-4">
               <% if check_user_notification == true %>
@@ -62,6 +61,50 @@
               </li>
             <% end %>
           </ul>
+          
+           <ul class="navbar-nav ml-auto header-all" id="sp-menu">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+              <% if check_user_notification == true %>
+                <p class="mt-4"><%= link_to user_health_centers_path, class: 'nav-link text-white' do %><%= t :contact %><% end %></p>
+              <% else %>
+                <p class="fa fa-circle mt-3" style="color:red;"><%= link_to user_health_centers_path, class: 'nav-link text-white' do %><%= t :contact %><% end %></p>
+              <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to user_user_path(current_user), class: 'nav-link text-white' do %><%= t :mypage %><% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
+              </li>
+            <% elsif health_center_signed_in? %>
+              <li class="nav-item">
+                <%= link_to health_center_users_path, class: 'nav-link text-white' do %><%= t :search_user %><% end %>
+              </li>
+              <li class="nav-item">
+                <% if check_health_center_notification == true %>
+                  <p class="mt-4"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
+                <% else %>
+                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to root_path, class: 'nav-link text-white' do %><%= t :home %><% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_session_path, class: 'nav-link text-white' do %><%= t :people_login %><% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_health_center_session_path, class: 'nav-link text-white' do %><%= t :health_center_login %><% end %>
+              </li>
+            <% end %>
+          </ul>
+          
+          
         </div>
       </div>
     </nav>

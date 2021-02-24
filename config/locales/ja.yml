@@ -41,6 +41,32 @@ ja:
   address: 住所
   about_healthcenter: 保健所の詳細
   you_can_chats: チャットボタンを押すことで問い合わせができます
+  holiday: 休日
+  lets_chat: チャットする
+  chat_page: チャット画面 
+  enter: エンターキーで送信ができます
+  sent_my_condition: 健康状態を報告する
+  condition_confirm: 健康状態の確認
+  fever: 熱
+  health_condition: 現在の体調
+  transportation: 取れる移動手段
+  want_examination: PCR検査を希望しますか？
+  my_condition: 送信した健康状態履歴の詳細
+  my_conditions: 健康状態の履歴
+  sent_day: 送信日
+  name: 名前
+  age: 年齢
+  phone: 連絡先
+  last_chat: チャットする
+  edit: 編集
+  edit_mypage: マイページの編集
+
+  
+
+
+
+
+
 
 
 

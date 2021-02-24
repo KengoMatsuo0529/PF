@@ -25,7 +25,7 @@
 //   })
 // })
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("turbolinks:load",function(){
   let btn = document.getElementsByClassName('navbar-toggler').item(0)
   let menu = document.getElementById('navbarSupportedContent')
   btn.addEventListener('click',function(){
