@@ -6,8 +6,9 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
-# TODO room＿id後で消す
   def speak(data)
-    Message.create! message: data['message'], room_id: data['room_id'], checked: data['checked']
+    room = Room.find(data['room_id'])
+    Message.create! message: data['message'], room_id: data['room_id'], checked: data['checked'], user_checked: false, healthcenter_checked: false, user_id: room.user_id, 
+                    health_center_id: room.health_center_id, from: data['from']
   end
 end

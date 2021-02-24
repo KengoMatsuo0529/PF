@@ -4,8 +4,9 @@ class UserHealth < ApplicationRecord
   belongs_to :health_center, optional: true
 
   validates :user_id, presence: true
-  validates :health_center_id, presence: true
   validates :temperature, presence: true
   validates :condition, presence: true
   validates :transportation, presence: true
+  validates :want_examination, presence: true, inclusion: { in: [true, false] }
+
 end

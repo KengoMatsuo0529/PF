@@ -1,0 +1,14 @@
+<div class="message">
+  <% if message.from == "health_center" %>
+    <div class="my-message" style="text-align: right">
+      <p class="pr-5 pt-4"><%= message.created_at.strftime('%m/%d %H:%M') %><br/>
+      <%= message.message %></p>
+    </div>
+  <% else %>
+    <div class="your-message">
+      <p class="pl-5 pt-5"><%= link_to message.user.full_name,health_center_user_path(@user),class: "Editlink" %>
+      <%= message.created_at.strftime('%m/%d %H:%M') %><br/>
+      <%= message.message %></p>
+    </div>
+  <% end %>
+</div>

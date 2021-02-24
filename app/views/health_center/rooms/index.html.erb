@@ -1,7 +1,57 @@
-<div>
-  <ul>
-    <% @rooms.each do |room| %>
-      <li><%= link_to "ROOM#{room.id}" #room_path(room) %></li>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title">チャット一覧画面</h2>
+  </div>
+
+<div class="container center-contents pt-2">
+  <div class="row my-5 ml-5">
+    <%= form_tag(health_center_chat_rooms_path, method: :get) do %>
+      <%= text_field_tag (:search), '',  placeholder: "検索したい言葉" %>
+      <%= submit_tag "検索" %>
     <% end %>
-  </ul>
+  </div>
+
+
+<div class="datagrid mx-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>開始日時</th>
+        <th>最終履歴日時</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <div id="paging">
+            <ul>
+              <li><a href="#"><span>Previous</span></a></li>
+              <li><a href="#" class="active"><span>1</span></a></li>
+              <li><a href="#"><span>2</span></a></li>
+              <li><a href="#"><span>3</span></a></li>
+              <li><a href="#"><span>4</span></a></li>
+              <li><a href="#"><span>5</span></a></li>
+              <li><a href="#"><span>Next</span></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @rooms.each do |room| %>
+      <tr>
+        <td><%= link_to room.user.full_name, health_center_chat_room_path(room.user_id) %></td>
+        <td><%= room.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+        <% if room.messages.count == 0 %>
+          <td>メッセージなし</td>
+        <% else %>
+          <td><%= room.messages.last.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
 </div>

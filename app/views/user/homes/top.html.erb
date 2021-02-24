@@ -1,29 +1,33 @@
-<div class="jumbotron">
-      <div class="container">
-        <h2 class="display-3 center-block">みんなで繋がり合って、<br />助け合う</h2>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      </div>
-    </div>
+<div class="jumbotron top-img">
+  <div class="container">
+    <h1 class="top-message" id="topmessage"><%= t :we_help %><br/><%= t :each_other %></h1>
+  </div>
+</div>
+<div class="section about-img">
+  <div class="txtBox inview fadeIn_left">
+    <p><%= t :real_time_chat %></p>
+  </div>
+</div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <table class="table table-hover">
-    <tr>
-      <th><h2>個人のお客様</h2></th>
-      <td><h3><%= link_to "保健所の検索", user_health_centers_path %></h3><br />保健所の検索とチャットによるお問い合わせができます</td>
-      <td><h3><%= link_to "健康状態の報告", new_user_user_health_path %></h3><br />自信の健康状態の報告ができます</td>
-      <td><h3><%= link_to "マイページ" %></h3><br />ご自身の各種履歴や個人情報の確認・更新ができます</td>
-    </tr>
-    <tr>
-      <th><h2>保健所のお客様</h2></th>
-      <td><h3><%= link_to "ユーザーの検索", health_center_users_path  %></h3><br />名前や電話番号で個人の検索ができます</td>
-      <td><h3><%= link_to "チャットの一覧" %></h3><br />チャットの対応はここからできます</td>
-      <td><h3><%= link_to "健康状態の確認", health_center_user_healths_path %></h3><br />送信された健康状態はこちらから確認できます</td>
-    </tr>
-  </table>
-      </div>
-
-<div>
-  
+<div class="container top-list">
+  <div class="row">
+    <table class="table">
+      <tr class="alt">
+        <td><h2><%= t :people %></h2></td>
+        <td><h3><%= link_to  user_health_centers_path do %><%= t :contact %><% end %></h3><br /><%= t :with_healthcenter %><br /><%= t :can_contact %></td>
+        <td><h3><%= link_to new_user_user_health_path do %><%= t :report %><% end %></h3><br /><%= t :your_healath %></td>
+      <% if user_signed_in? %>
+        <td><h3><%= link_to user_user_path(current_user) do %><%= t :mypage %><% end %></h3><br /><%= t :my_page %><br /><%= t :edit %></td>
+      <% else %>
+        <td><h3><%= link_to new_user_session_path do %><%= t :mypage %><% end %></h3><br /><%= t :my_page %><br /><%= t :edit %></td>
+      <% end %>
+      </tr>
+      <tr>
+        <td><h2><%= t :Health_Center %></h2></td>
+        <td><h3><%= link_to health_center_users_path do %><%= t :user_search %><% end %></h3><br /><%= t :search_user %><br /><%= t :with_name %></td>
+        <td><h3><%= link_to  health_center_chat_rooms_path do %><%= t :all_chats %><% end %></h3><br /><%= t :chats_index %></td>
+        <td><h3><%= link_to  health_center_user_healths_path do %><%= t :confirm_health %><% end %></h3><br /><%= t :confirm_userhealth %></td>
+      </tr>
+    </table>
+  </div>
 </div>

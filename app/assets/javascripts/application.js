@@ -17,3 +17,45 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// $(function(){
+//   // let accordionBtn = $('navbar-toggler')
+//   $('navbar-toggler').click(function(){
+//     alert('test')
+//   })
+// })
+
+document.addEventListener("DOMContentLoaded",function(){
+  let btn = document.getElementsByClassName('navbar-toggler').item(0)
+  let menu = document.getElementById('navbarSupportedContent')
+  btn.addEventListener('click',function(){
+    document.getElementById('navbarSupportedContent').classList.toggle('collapse')
+  })
+})
+
+$(function() {
+    var topBtn = $('#top-btn a');
+    topBtn.hide();
+    $(window).scroll(function(){
+         if ($(this).scrollTop() > 4000) {
+             topBtn.fadeIn(2000);
+         } else {
+             topBtn.fadeOut();
+         }
+    });
+    topBtn.click(function () {
+        $('body, html').animate({
+      scrollTop:0
+    }, 1000);
+    event.preventDefault();
+  });
+});
+
+ $(function(){
+  $(".inview").on("inview", function (event, isInView) {
+    if (isInView) {
+      $(this).stop().addClass("is-show");
+    }
+  });
+  });
+

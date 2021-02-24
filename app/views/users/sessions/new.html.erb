@@ -1,26 +1,27 @@
-<h2>ログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title"><%= t :log_in %></h2>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+<div class="container center-contents pt-2">
+  <div class="row my-5 ml-5">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email, "メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field mt-3">
+        <%= f.label :password,"パスワード" %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <div class="actions pt-4">
+        <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="pl-5 signup-link">
+      <%= t :if_not_signin %> <%= link_to new_registration_path(resource_name) do %><%= t :people_signin %><% end %><br />
+      <br/><div class="pass-change"><%= render "users/shared/links" %></div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
+</div>
