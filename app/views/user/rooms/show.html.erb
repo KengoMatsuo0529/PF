@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row py-4">
-    <h2 class="title mx-auto">チャット画面</h2>
+    <h2 class="title mx-auto"><%= t :chat_page %></h2>
   </div>
 <div class="chat-back">
   <div id="messages" room_id="<%= @room.id %>" from='user' name="<%= current_user.full_name %>">
@@ -8,12 +8,12 @@
     <%= render @messages %>
   </div>
   <form class="pb-4 pr-5" style="text-align: right">
-    <label>エンターキーで送信ができます</label><br>
+    <label><%= t :enter %></label><br>
     <input type="text" data-behavior="room_speaker">
   </form>
 </div>
   <div class="d-flex justify-content-end pr-1 mr-1">
-    <%= link_to "健康状態を報告する",new_user_user_health_path(health_center_id: @room.health_center_id), class:"user_health_-button mr-5 mb-3 mt-3" %>
+    <%= link_to new_user_user_health_path(health_center_id: @room.health_center_id), class:"user_health_-button mr-5 mb-3 mt-3" do %><%= t :sent_my_condition %><% end %>
   </div>
 
 <%= render '/messages/room_channel' %>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2 class="title">マイページの編集</h2>
+    <h2 class="title"><%= t :edit_mypage %></h2>
   </div>
     <% if @user.errors.any? %>
       <p class="validates-errors">入力に誤りがあります</p>
@@ -10,7 +10,7 @@
   <div class="row pl-5 pt-3">
     <%= form_with model: @user, url: user_user_path, method: :patch, local:true do |f| %>
       <div class="field my-3">
-        <%= f.label :last_name,"名前(苗字)" %><br />
+        <%= f.label :last_name, "名前(苗字)" %><br />
         <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
       </div>
       <div class="field my-3">
@@ -30,7 +30,7 @@
         <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
       </div>
       <div class="field my-3">
-        <%= f.label :email,"メールアドレス" %><br />
+        <%= f.label :email,"#{t :email}" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field my-3">

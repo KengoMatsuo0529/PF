@@ -1,29 +1,29 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2 class="title">マイページ</h2>
+    <h2 class="title"><%= t :mypage %></h2>
   </div>
 
 <div class="container center-contents pt-3">
   <div class="row my-5 pt-3">
   <table class="table table-hover show-list">
     <tr>
-      <th>名前</th>
+      <th><%= t :name %></th>
       <td><%= @user.full_name %></td>
     </tr>
     <tr>
-      <th>年齢</th>
+      <th><%= t :age %></th>
       <td><%= @user.age %></td>
     </tr>
     <tr>
-      <th>連絡先</th>
+      <th><%= t :phone %></th>
       <td><%= @user.phone_number %></td>
     </tr>
     <tr>
-      <th>住所</th>
+      <th><%= t :address %></th>
       <td><%= @user.address_city + @user.address_street + @user.address_building %></td>
     </tr>
     <tr>
-      <th>メールアドレス</th>
+      <th><%= t :email %></th>
       <td><%= @user.email %></td>
     </tr>
   </table>
@@ -32,14 +32,14 @@
 <div>
   <div class="mb-5 pl-3">
     <% if @room %>
-      <%= link_to "チャット履歴",user_chat_room_path(@room.health_center), class:"chat-button" %>
-      <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
+      <%= link_to user_chat_room_path(@room.health_center), class:"chat-button" do %><%= t :last_chat %><% end %>
+      <%= link_to user_user_healths_path, class:"chat-button" do %><%= t :my_conditions %><% end %>
     <% else %>
       <%= link_to "チャット履歴", "", class:"chat-button disabled" %>
       <%= link_to "健康状態履歴",user_user_healths_path, class:"chat-button" %>
     <% end %>
     <div class="d-flex justify-content-end pr-5 mr-5 mb-2">
-      <%= link_to "編集",edit_user_user_path, class:"btn btn-success" %>
+      <%= link_to edit_user_user_path, class:"btn btn-success" do %><%= t :edit %><% end %>
     </div>
   </div>
 </div>

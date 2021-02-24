@@ -16,14 +16,14 @@
         <td><%= @health_center.address_city + @health_center.address_street %></td>
       </tr>
       <tr>
-        <th>休日</th>
+        <th><%= t :holiday %></th>
         <td><%= @health_center.holiday %></td>
       </tr>
     </table>
   </div>
 
   <div class="d-flex justify-content-end pr-5">
-    <%= link_to "チャットする", user_chat_room_path(@health_center), class:"chat-button" %>
+    <%= link_to user_chat_room_path(@health_center), class:"chat-button" do %><%= t :lets_chat %><% end %>
   </div>
 </div>
 </div>

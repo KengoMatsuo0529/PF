@@ -242,6 +242,26 @@ footer{
   margin-right: 10px;
 }
 
+#pc-menu {
+  display: flex;
+}
+
+#sp-menu {
+  display: none;
+}
+
+
+@media screen and (max-width:991.98px) {
+
+#pc-menu {
+  display: none;
+}
+
+#sp-menu {
+  display: flex;
+}
+
+}
 
 
 @media screen and (max-width:375px) {
@@ -311,6 +331,7 @@ footer {
   height: 15px;
   padding: 5% 0;
   bottom: 0%;
+  line-height: normal;
 }
 
 .nav-item {
@@ -340,6 +361,13 @@ footer {
 .confirm-button {
   margin-top: 5%;
   margin-right: 15%;
+}
+
+#sp-menu {
+  text-align: right;
+  .nav-link {
+    padding: 5px 5px;
+  }
 }
 
 
