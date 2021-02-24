@@ -1,5 +1,58 @@
 ---
 ja:
+  hello_world: こんにちは world!
+  Health_Center: 保健所のお客様
+  we_help: みんなで繋がり合って、
+  each_other: 助け合う
+  people: 個人のお客様
+  real_time_chat: リアルタイムチャットで問い合わせ・対応ができます
+  home: Home
+  people_login: 個人のログイン
+  health_center_login: 保健所のログイン
+  people_signin: こちら
+  people_signup: こちら 
+  sign_in: 新規登録
+  log_in: ログイン
+  log_out: ログアウト
+  email: メールアドレス
+  password: パスワード
+  contact: 保健所への問い合わせ
+  report: 健康状態の報告
+  mypage: マイページ
+  serch_user: ユーザーの検索
+  all_chats: チャットの一覧
+  confirm_health: 健康状態の確認
+  with_healthcenter: 保健所の検索とチャットによる
+  can_contact: お問い合わせができます
+  your_healath: 自信の健康状態の報告ができます
+  my_page: ご自身の各種履歴や個人情報の
+  edit: 確認・更新ができます
+  user_search: 名前や電話番号で
+  with_name: 個人の検索ができます
+  chats_index: チャットの対応はこちらからできます
+  confirm_userhealth: 送信された健康状態の確認ができます
+  if_not_signin: 登録がお済みでない方は
+  if_signuped: ご登録がお済みの方は
+  forget_password: パスワードをお忘れですか？
+  repassword: パスワード再発行画面
+  search_healthcenter: 保健所の検索
+  search_message: お住まいの市町村を入れていただくことで保健所の検索が可能です
+  health_center_name: 保健所名
+  address: 住所
+  about_healthcenter: 保健所の詳細
+  you_can_chats: チャットボタンを押すことで問い合わせができます
+
+
+
+
+
+
+
+
+
+  
+
+
   activerecord:
     errors:
       messages:
@@ -17,7 +70,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -43,7 +96,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月

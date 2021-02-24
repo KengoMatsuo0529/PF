@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2 class="title">ログイン</h2>
+    <h2 class="title"><%= t :log_in %></h2>
   </div>
 
 <div class="container center-contents pt-2">
   <div class="row my-5 ml-5">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email,"メールアドレス" %><br />
+        <%= f.label :email, "メールアドレス" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field mt-3">
@@ -20,7 +20,7 @@
     <% end %>
   </div>
     <div class="pl-5 signup-link">
-      登録がお済みでない方は<%= link_to "こちら", new_registration_path(resource_name) %><br />
+      <%= t :if_not_signin %> <%= link_to new_registration_path(resource_name) do %><%= t :people_signin %><% end %><br />
       <br/><div class="pass-change"><%= render "users/shared/links" %></div>
     </div>
 </div>

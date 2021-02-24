@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2 class="title">新規登録</h2>
+    <h2 class="title"><%= t :sign_in %></h2>
   </div>
 
 <div class="container  user-signin-contents pt-2">
@@ -74,7 +74,7 @@
     <% end %>
   </div>
     <div class="ml-4 signin-link">
-      ご登録がお済みの方は <%= link_to "こちら", new_session_path(resource_name) %><br />
+      <%= t :if_signuped %> <%= link_to new_session_path(resource_name) do %><%= t :people_signup %><% end %><br />
     </div>
 </div>
 </div>

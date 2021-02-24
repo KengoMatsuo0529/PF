@@ -28,9 +28,55 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 ---
 en:
+  hello_world: Hello world!
+  Health_Center: Health Center
+  we_help: We Help
+  each_other: Each Other
+  people: People
+  real_time_chat: You can talk with live chat
+  home: Home
+  people_login: User Login
+  health_center_login: HealthCenter Login
+  people_signin: HERE
+  people_signup: HERE 
+  sign_in: SignUp
+  log_in: Log in
+  log_out: Log out
+  email: Email
+  password: Password
+  contact: Contact to HealthCenter
+  report: Report my condition
+  mypage: My Page
+  serch_user: Search User
+  all_chats: Chats List
+  confirm_health: Confirm Conditions
+  with_healthcenter: You can search & contact
+  can_contact: to health center
+  your_healath: To report your condition
+  my_page: You can confirm & edit
+  edit: your profile
+  user_search: You can search user
+  with_name: with name or phonenumber
+  chats_index: All chat history
+  confirm_userhealth: Check users conditions
+  if_not_signin: If you didn't SignUp
+  if_signuped: If you already SignUp
+  forget_password: Forget your password?
+  repassword: Reset your password
+  search_healthcenter: Search & Contact HealthCenter
+  search_message: You can search HealthCenter with your address_city
+  health_center_name: HealthCenter name
+  address: Address
+  about_healthcenter: About HealthCenter
+  you_can_chats: Push button to live chat
+
+
+
+
+
+
   activerecord:
     errors:
       messages:
