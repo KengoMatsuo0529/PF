@@ -31,7 +31,7 @@
 
 .top-img {
   height:700px;
-  background-image: url("top-hands.jpg");
+  background-image: image-url("top-hands.jpg");
   background-size: cover;
 }
 
@@ -49,7 +49,7 @@
 .about-img {
   height: 700px;
   width: 100%;
-  background-image: url("about-img.jpg");
+  background-image: image-url("about-img.jpg");
   background-size: cover;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .icon {
-  background-image: url("Health_link.jpg");
+  background-image: image-url("Health_link.jpg");
   background-size: cover;
   height: 100px;
   width: 200px;
