@@ -33,7 +33,7 @@
         <tbody>
           <% @user_healths.each do |user_health| %>
           <tr>
-            <td><%= user_health.condition %></td>
+            <td><%= link_to user_health.condition,user_user_health_path(user_health.id) %></td>
             <td><%= user_health.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
           </tr>
           <% end %>
