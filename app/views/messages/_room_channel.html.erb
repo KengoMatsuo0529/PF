@@ -21,7 +21,7 @@ appRoom = App.cable.subscriptions.create("RoomChannel", {
       $("."+from).css('text-align','right');
       $("."+from).children('p').removeClass('pl-5 pt-5');
       $("."+from).children('p').addClass('pr-5 pt-4');
-      $("."+from).children(".Editlink").hide();
+      $("."+from).children('p').children(".Editlink").hide();
     }
     else{
       $("."+from+"_link").hide();
