@@ -1,4 +1,5 @@
 <script>
+document.addEventListener("turbolinks:load", function(){
 appRoom = App.cable.subscriptions.create("RoomChannel", {
   connected: function() {
     // Called when the subscription is ready for use on the server
@@ -66,5 +67,5 @@ function checked(){
 
         });
     };
-
+})
 </script>
