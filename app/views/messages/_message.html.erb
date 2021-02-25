@@ -1,5 +1,7 @@
 <div class="message">
     <div class="my-message <%= message.from %>">
+    <p class="pl-5 pt-5"><%= link_to message.user.full_name,health_center_user_path(message.user),class: "Editlink user_link" %>
+    <p class="pl-5 pt-5"><%= link_to message.health_center.name,user_health_center_path(message.health_center), class: "Editlink health_center_link" %>
     <p class="pr-5 pt-4"><%= message.created_at.strftime('%m/%d %H:%M') %><br>
     <%= message.message %></p>
      </div>
