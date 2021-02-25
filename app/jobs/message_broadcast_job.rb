@@ -8,8 +8,7 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
-    pp message
-    if message.from == "user"
+    if message.from == 0
       ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
     else
       ApplicationController.renderer.render(partial: 'health_center/messages/message', locals: { message: message })
