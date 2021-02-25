@@ -5,7 +5,6 @@ class Message < ApplicationRecord
     user: 0,
     health_center: 1
   }, _prefix: true
-  
 
   belongs_to :user, optional: true
   belongs_to :health_center, optional: true
