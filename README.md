@@ -1,4 +1,4 @@
-# <アプリ名：未定>
+# <アプリ名：Health Link>
 
 ## 概要
 
@@ -8,8 +8,8 @@
 
 ## URL
 
-※貼り付け予定
-ヘッダーの「個人の方」もしくは「保健所の方」からそれぞれのHOME画面に遷移できます。
+http://54.248.169.153/
+保健所の検索と詳細確認はログインせずにご利用いただけます。
 ログインや新規登録はHOME画面のヘッダーからお願い致します。
 
 ## 制作の背景
@@ -44,7 +44,7 @@ https://docs.google.com/spreadsheets/d/1vQ8D_Ov_WJ1GSslXB0YgrPfecqP0SI0HKlC1Fzvx
 
 フロントエンド
 ・Bootstrap 4.5.0
-・SCSS (BEM)
+・SCSS
 ・JavaScript、jQuery
 
 バックエンド
@@ -55,18 +55,14 @@ https://docs.google.com/spreadsheets/d/1vQ8D_Ov_WJ1GSslXB0YgrPfecqP0SI0HKlC1Fzvx
 ・Cloud9
 
 本番環境
-AWS (EC2、RDS for MySQL、Route53、CloudWatch、S3、Lambda)
+AWS (EC2、RDS for MySQL、S3)
 MySQL2
 Nginx、 Puma
-
-テスト
-・Rspec (単体／結合） 計100以上
 
 その他利用技術
 yml（外国人ユーザーを想定し多言語化）
 Action Cable（チャット機能）
-Action Mailer
-チーム開発を意識したGitHubの活用 （イシュー、プルリク、マージ）
+チーム開発を意識したGitHubの活用 （プルリク、マージ）
 
 ※今回、個人情報保護の観点からセキュリティが万全とは言えない為、実際の個人データを取り扱うことはございません。
 
