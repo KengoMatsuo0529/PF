@@ -9,25 +9,25 @@
       <%= render "users/shared/error_messages", resource: resource %>
       <div class="field">
         <%= f.label :last_name,"#{ t :last_name }" %><br />
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"田中" %>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"#{ t :tanaka }" %>
       </div>
       <div class="field mt-3">
         <%= f.label :first_name, "#{ t :first_name }" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"太郎" %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"#{ t :tarou }" %>
       </div>
       <div class="field mt-3">
         <%= f.label :last_name_kana,"#{ t :last_name_kana }" %><br />
-        <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"タナカ" %>
+        <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"#{ t :tanaka_kana }" %>
       </div>
       <div class="field mt-3">
         <%= f.label :first_name_kana,"#{ t :first_name_kana }" %><br />
-        <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"タロウ" %>
+        <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"#{ t :tarou_kana }" %>
       </div>
       <div class="field mt-3">
-        <%= f.radio_button :gender, :male %>
-        <%= f.label :gender, "#{ t :male }", {value: :male, style: "display: inline-block;"} %>
-        <%= f.radio_button :gender, :female %>
-        <%= f.label :gender, "#{ t :female }", {value: :female, style: "display: inline-block;"} %>
+        <%= f.radio_button :gender, :man %>
+        <%= f.label :gender, "#{ t :male }", {value: :man, style: "display: inline-block;"} %>
+        <%= f.radio_button :gender, :woman %>
+        <%= f.label :gender, "#{ t :female }", {value: :woman, style: "display: inline-block;"} %>
       </div>
       <div class="field mt-3">
         <%= f.label :age,"#{ t :age }" %><br />
@@ -43,15 +43,15 @@
       </div>
       <div class="field mt-3">
         <%= f.label :address_city,"#{ t :address_city }" %><br />
-        <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", placeholder:"東京都" %>
+        <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", placeholder:"#{t :tokyo }" %>
       </div>
       <div class="field mt-3">
         <%= f.label :address_street,"#{ t :address_street }" %><br />
-        <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street", placeholder:"渋谷区" %>
+        <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street", placeholder:"#{t :shibuya}" %>
       </div>
       <div class="field mt-3">
         <%= f.label :address_building,"#{ t :address_building }" %><br />
-        <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building", placeholder:"宇田川町１−１" %>
+        <%= f.text_field :address_building, autofocus: true, autocomplete: "address_building", placeholder:"#{t :udagawa}" %>
       </div>
       <div class="field mt-3">
         <%= f.label :phone_number,"#{ t :phone }" %><br />

@@ -40,7 +40,7 @@ en:
   people_login: User Login
   health_center_login: HealthCenter Login
   people_signin: HERE
-  people_signup: HERE 
+  people_signup: HERE
   sign_up: SignUp
   log_in: Log in
   log_out: Log out
@@ -66,7 +66,7 @@ en:
   forget_password: Forget your password?
   repassword: Reset your password
   search_healthcenter: Search & Contact HealthCenter
-  search_message: You can search HealthCenter with your address_city
+  search_message: You can search HealthCenter with your Address_city
   health_center_name: HealthCenter name
   address: Address
   about_healthcenter: About HealthCenter
@@ -100,8 +100,8 @@ en:
   address_street: Address street
   address_building: Address building
   update: Update
-  male: Male
-  female: Female
+  male: Man
+  female: Woman
   character: character or more
   conf_pass: Password for confirmation
   reset_pass: Sent email for reset password
@@ -110,13 +110,21 @@ en:
   none: none
   confirm: OK
   sent: Sent
+  tanaka: Tanaka
+  tarou: Tarou
+  tanaka_kana: Tanaka
+  tarou_kana: Tarou
+  tokyo: Tokyo
+  shibuya: Shibuya
+  udagawa: Udagawa1-1
 
 
 
 
 
 
-  
+
+
 
 
 

@@ -3,6 +3,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum gender: {
+    man: 0,
+    woman: 1
+  }
+
   has_many :user_healths
   has_many :rooms
   has_many :messages, dependent: :destroy

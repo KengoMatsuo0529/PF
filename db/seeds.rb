@@ -12,42 +12,17 @@ User.create!(
   first_name: "健吾",
   last_name_kana: "マツオ",
   first_name_kana: "ケンゴ",
-  email: "testtest@test.com",
+  email: "test@test.com",
   password: "012345",
   postcode: "1234567",
   address_city: "東京都",
   address_street: "渋谷区",
   address_building: "神南1丁目19-11",
-  phone_number: "08034268378",
+  phone_number: "08034268377",
   gender: "man",
   age: "27",
-  image_id: "1",
-  prefecture_code: "1"
+  is_deleted: "false"
   )
-
-UserHealth.create!(
-  user_id: 1,
-  health_center_id: 1,
-  temperature: "32",
-  condition: "頭痛・鼻水",
-  transportation: "自転車",
-  want_examination: "false"
-  )
-  
-Room.create!(
-  user_id: 1,
-  health_center_id: 1,
-  )
-
-Message.create!(
-  health_center_id: 1,
-  user_id: 1,
-  room_id: 1,
-  message: "PCR検査を受けたいのですが",
-  checked: "read"
-  )
-
-
 
 HealthCenter.create!(
     name: "大田区保健所",
@@ -58,7 +33,32 @@ HealthCenter.create!(
     phone_number: "0337560529",
     corporate_number: "1234567891234",
     holiday: "土曜日",
-    image_id: 1,
     email: "a@a",
     password: "012345"
     )
+
+UserHealth.create!(
+  user_id: 1,
+  health_center_id: 1,
+  temperature: "37.2",
+  condition: "頭痛・鼻水",
+  transportation: "自転車",
+  want_examination: "false"
+  )
+
+Room.create!(
+  user_id: 1,
+  health_center_id: 1,
+  )
+
+Message.create!(
+  health_center_id: 1,
+  user_id: 1,
+  room_id: 1,
+  message: "PCR検査を受けたいのですが",
+  checked: "false",
+  user_checked: "1",
+  healthcenter_checked: "1",
+  from: 0
+  )
+

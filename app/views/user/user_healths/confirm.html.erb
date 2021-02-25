@@ -8,19 +8,19 @@
       <table class="table table-hover show-list">
         <%= form_with model: @user_health, url: user_user_healths_path, method: :post, local:true do |f| %>
       <tr>
-        <th><%= t :fever %></th>
+        <th class="confirm_list"><%= t :fever %></th>
         <td><%= @user_health.temperature %></td>
       </tr>
       <tr>
-        <th><%= t :health_condition %></th>
+        <th class="confirm_list"><%= t :health_condition %></th>
         <td><%= @user_health.condition %></td>
       </tr>
       <tr>
-        <th><%= t :transportation %></th>
+        <th class="confirm_list"><%= t :transportation %></th>
         <td><%= @user_health.transportation %></td>
       </tr>
       <tr>
-        <th><%= t :want_examination %></th>
+        <th class="confirm_list"><%= t :want_examination %></th>
         <td><%= @user_health.want_examination ? "希望する" : "希望しない" %></td>
       </tr>
     </table>

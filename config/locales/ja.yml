@@ -10,7 +10,7 @@ ja:
   people_login: 個人のログイン
   health_center_login: 保健所のログイン
   people_signin: こちら
-  people_signup: こちら 
+  people_signup: こちら
   sign_up: 新規登録
   log_in: ログイン
   log_out: ログアウト
@@ -43,7 +43,7 @@ ja:
   you_can_chats: チャットボタンを押すことで問い合わせができます
   holiday: 休日
   lets_chat: チャットする
-  chat_page: チャット画面 
+  chat_page: チャット画面
   enter: エンターキーで送信ができます
   sent_my_condition: 健康状態を報告する
   condition_confirm: 健康状態の確認
@@ -80,11 +80,18 @@ ja:
   none: 希望しない
   confirm: 確認画面へ進む
   sent: 送信する
+  tanaka: 田中
+  tarou: 太郎
+  tanaka_kana: タナカ
+  tarou_kana: タロウ
+  tokyo: 東京都
+  shibuya: 渋谷区
+  udagawa: 宇多川町1-1
 
 
 
 
-  
+
 
 
 
