@@ -8,6 +8,7 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
+    pp message
     if message.from == "user"
       ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
     else
