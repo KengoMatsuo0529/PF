@@ -1,5 +1,5 @@
 <div class="message">
-    <div class="my-message" style="text-align: right">
+    <div class="my-message <%= message.from %>">
     <p class="pr-5 pt-4"><%= message.created_at.strftime('%m/%d %H:%M') %><br>
     <%= message.message %></p>
      </div>

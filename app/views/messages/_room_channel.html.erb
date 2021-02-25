@@ -11,12 +11,15 @@ appRoom = App.cable.subscriptions.create("RoomChannel", {
   received: function(data) {
     const messages = document.getElementById('messages');
     const name = messages.getAttribute('name');
+    const from = messages.getAttribute('from');
     // var newDiv = document.createElement("div");
     // if messages.user == current_user "me"
     // else "other"
 //    div = '<div text-align: right"><p>' + data['created_at'] + '</p><p>' + data['message'] + '</p></div>'
     messages.insertAdjacentHTML('beforeend', data['message']);
-
+    if (data['from'] == from){
+      $("."+from).css('text-align','right');
+    }
     // messages.insertAdjacentHTML("me", data['message']);
     checked()
 
