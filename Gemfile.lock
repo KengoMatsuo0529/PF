@@ -215,6 +215,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     refile-mini_magick (0.2.0)
       mini_magick (~> 4.0)
       refile (~> 0.5)
@@ -361,6 +362,7 @@ DEPENDENCIES
   rails (~> 5.2.4)
   rails-i18n
   rails4-autocomplete
+  redis (~> 4.0)
   refile!
   refile-mini_magick
   rspec-rails
