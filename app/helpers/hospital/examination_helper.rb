@@ -1,0 +1,2 @@
+module Hospital::ExaminationHelper
+end

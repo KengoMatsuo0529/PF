@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :user_healths
   has_many :rooms
   has_many :messages, dependent: :destroy
+  has_many :examinations ,dependent: :destroy
 
   has_many :active_notifications, class_name: 'Message', foreign_key: 'user_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Message', foreign_key: 'health_center_id', dependent: :destroy

@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title">保健所の検索</h2>
+  </div>
+  <p>検査所のある市町村を入れていただくことで保健所の検索が可能です</p>
+
+<div class="container center-contents pt-2">
+  <div class="row my-5 ml-5">
+    <%= form_tag(hospital_health_centers_path, method: :get) do %>
+      <%= text_field_tag :search, '',  placeholder: "渋谷区" %>
+      <%= submit_tag "#{ t :search }" %>
+    <% end %>
+  </div>
+  <div class="datagrid mx-auto">
+    <table>
+      <thead>
+        <tr>
+         <th><%= t :health_center_name %></th>
+         <th><%= t :address %></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <div id="paging">
+              <ul>
+                <li><a href="#"><span>Previous</span></a></li>
+                <li><a href="#" class="active"><span>1</span></a></li>
+                <li><a href="#"><span>2</span></a></li>
+                <li><a href="#"><span>3</span></a></li>
+                <li><a href="#"><span>4</span></a></li>
+                <li><a href="#"><span>5</span></a></li>
+                <li><a href="#"><span>Next</span></a></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+      <tbody>
+       <% @health_centers.each do |health_center| %>
+        <tr>
+        <td><%= link_to health_center.name,hospital_health_center_path(health_center), class: "health_center_#{health_center.id}" %></td>
+        <td><%= health_center.address_city + health_center.address_street %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -49,6 +49,20 @@
               <li class="nav-item mx-4 pt-5">
                 <%= link_to destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
               </li>
+            <% elsif hospital_signed_in? %>
+              <li class="nav-item pt-4 ml-auto pt-5">
+                <%= link_to hospital_users_path, class: 'nav-link text-white' do %><%= t :search_user %><% end %>
+              </li>
+              <li class="nav-item  pr-4 pl-5 pt-4">
+                <% if check_health_center_notification == true %>
+                  <p class="mt-4"><%= link_to hospital_health_centers_path, class: "nav-link text-white" do %><%= t :search_healthcenter %><% end %></p>
+                <% else %>
+                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
+                <% end %>
+              </li>
+              <li class="nav-item mx-4 pt-5">
+                <%= link_to destroy_hospital_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
+              </li>
             <% else %>
               <li class="nav-item ml-auto pt-5">
                 <%= link_to root_path, class: 'nav-link text-white' do %><%= t :home %><% end %>
@@ -58,6 +72,9 @@
               </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to new_health_center_session_path, class: 'nav-link text-white' do %><%= t :health_center_login %><% end %>
+              </li>
+              <li class="nav-item mx-4 pt-5">
+                <%= link_to new_hospital_session_path, class: 'nav-link text-white' do %><%= t :hospital_login %><% end %>
               </li>
             <% end %>
           </ul>
@@ -90,6 +107,20 @@
               </li>
               <li class="nav-item">
                 <%= link_to destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
+              </li>
+            <% elsif hospital_signed_in? %>
+              <li class="nav-item pt-4 ml-auto pt-5">
+                <%= link_to hospital_users_path, class: 'nav-link text-white' do %><%= t :search_user %><% end %>
+              </li>
+              <li class="nav-item  pr-4 pl-5 pt-4">
+                <% if check_health_center_notification == true %>
+                  <p class="mt-4"><%= link_to hospital_health_centers_path, class: "nav-link text-white" do %><%= t :search_healthcenter %><% end %></p>
+                <% else %>
+                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
+                <% end %>
+              </li>
+              <li class="nav-item mx-4 pt-5">
+                <%= link_to destroy_hospital_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
               </li>
             <% else %>
               <li class="nav-item">

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title"><%= t :about_healthcenter %></h2>
+  </div>
+  <p><%= t :you_can_chats %></p>
+
+<div class="container center-contents pt-3">
+  <div class="row my-5 pt-3">
+    <table class="table table-hover show-list">
+      <tr>
+        <th><%= t :health_center_name %></th>
+        <td><%= @health_center.name %></td>
+      </tr>
+      <tr>
+        <th><%= t :address %></th>
+        <td><%= @health_center.address_city + @health_center.address_street %></td>
+      </tr>
+      <tr>
+        <th><%= t :holiday %></th>
+        <td><%= @health_center.holiday %></td>
+      </tr>
+      <tr>
+        <th><%= t :phone %></th>
+        <td><%= @health_center.phone_number %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
