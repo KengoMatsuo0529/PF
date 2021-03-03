@@ -2,6 +2,10 @@
   <div class="row mx-auto my-4">
     <h2 class="title">検査結果の確認画面</h2>
   </div>
+  
+      <% if @examination.errors.any? %>
+     <p class="validates-errors">入力に誤りがあります</p>
+    <% end %>
 
   <div class="container center-contents pt-3">
     <div class="row my-5 pt-3">
@@ -9,11 +13,11 @@
         <%= form_with model: @examination, url: hospital_examinations_path, method: :post, local:true do |f| %>
       <tr>
         <th class="confirm_list">被検者氏名</th>
-        <td><%#= @examination.user.full_name %></td>
+        <td><%= @examination.user.full_name %></td>
       </tr>
       <tr>
         <th class="confirm_list">被検者年齢</th>
-        <td><%#= @examination.user.age %></td>
+        <td><%= @examination.user.age %></td>
       </tr>
        <tr>
         <th class="confirm_list">検査実施日</th>
@@ -33,11 +37,11 @@
       </tr>
     </table>
     </div>
-      <%= f.hidden_field :doctor %>
-      <%= f.hidden_field :date %>
-      <%= f.hidden_field :speciment %>
-      <%= f.hidden_field :result %>
-      <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :doctor, value: @examination.doctor %>
+      <%= f.hidden_field :date, value: @examination.date %>
+      <%= f.hidden_field :speciment, value: @examination.speciment %>
+      <%= f.hidden_field :result, value: @examination.result %>
+      <%= f.hidden_field :user_id, value: @examination.user_id %>
 
     <div class="d-flex justify-content-end pr-5 pt-2">
       <%= f.submit "送信", class:"btn btn-success" %>

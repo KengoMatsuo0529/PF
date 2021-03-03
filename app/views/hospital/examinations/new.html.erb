@@ -3,10 +3,6 @@
     <h2 class="title">検査結果の作成</h2>
   </div>
 
-    <% if @examination.errors.any? %>
-     <p class="validates-errors">入力に誤りがあります</p>
-    <% end %>
-
     <div class="container center-contents pt-5">
       <div class="form my-2">
         <%= form_with url: hospital_examination_confirm_path, method: :post, local:true do |f| %>
@@ -26,6 +22,9 @@
             <%= f.label :result, "検査結果", class: "col-3" %>
             <%= f.select :result, [["陽性",1],["陰性",0]] %>
           </div>
+
+          <%= f.hidden_field :user_id, value: @user_id %>
+
           <div class="d-flex justify-content-end pr-5">
             <%= f.submit "確認する", class: "confirm-button" %>
         <% end %>

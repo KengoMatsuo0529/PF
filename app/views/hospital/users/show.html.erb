@@ -26,7 +26,7 @@
     </table>
   </div>
   <div class="d-flex justify-content-end pr-5">
-    <%= link_to "検査結果を作成する",new_hospital_examination_path, class:"chat-button" %>
+    <%= link_to "検査結果を作成する",new_hospital_examination_path(user_id: @user.id), class:"chat-button" %>
   </div>
 </div>
 </div>

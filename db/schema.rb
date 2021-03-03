@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_131520) do
+ActiveRecord::Schema.define(version: 2021_03_02_092721) do
 
   create_table "examinations", force: :cascade do |t|
     t.integer "user_id"
@@ -43,17 +43,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_131520) do
     t.index ["reset_password_token"], name: "index_health_centers_on_reset_password_token", unique: true
   end
 
-  create_table "hospitals", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_hospitals_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_hospitals_on_reset_password_token", unique: true
-  end
+# Could not dump table "hospitals" because of following StandardError
+#   Unknown type 'strign' for column 'address_city'
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
@@ -66,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_131520) do
     t.integer "user_checked"
     t.integer "healthcenter_checked"
     t.integer "from"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -84,6 +76,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_131520) do
     t.datetime "updated_at", null: false
     t.text "transportation"
     t.boolean "want_examination"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-
   around_action :swith_locale
 
   def swith_locale(&action)
@@ -19,6 +18,8 @@ class ApplicationController < ActionController::Base
         health_center_users_path
       when User
         user_health_centers_path
+      when Hospital
+        root_path
     end
   end
 

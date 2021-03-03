@@ -54,11 +54,7 @@
                 <%= link_to hospital_users_path, class: 'nav-link text-white' do %><%= t :search_user %><% end %>
               </li>
               <li class="nav-item  pr-4 pl-5 pt-4">
-                <% if check_health_center_notification == true %>
                   <p class="mt-4"><%= link_to hospital_health_centers_path, class: "nav-link text-white" do %><%= t :search_healthcenter %><% end %></p>
-                <% else %>
-                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
-                <% end %>
               </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to destroy_hospital_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
@@ -113,11 +109,7 @@
                 <%= link_to hospital_users_path, class: 'nav-link text-white' do %><%= t :search_user %><% end %>
               </li>
               <li class="nav-item  pr-4 pl-5 pt-4">
-                <% if check_health_center_notification == true %>
                   <p class="mt-4"><%= link_to hospital_health_centers_path, class: "nav-link text-white" do %><%= t :search_healthcenter %><% end %></p>
-                <% else %>
-                  <p class="fa fa-circle notifi" style="color:red;"><%= link_to health_center_chat_rooms_path, class: "nav-link text-white" do %><%= t :all_chats %><% end %></p>
-                <% end %>
               </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to destroy_hospital_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>

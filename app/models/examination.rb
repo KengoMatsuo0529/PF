@@ -1,7 +1,7 @@
 class Examination < ApplicationRecord
 
   belongs_to :user
-  belongs_to :health_center
+  belongs_to :health_center, optional: true
   belongs_to :hospital
 
   validates :doctor, presence: true

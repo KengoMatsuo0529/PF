@@ -30,6 +30,7 @@ class User::UserHealthsController < ApplicationController
     end
     @user_health.health_center_id = params[:health_center_id]
     @user_health.user_id = current_user.id
+    @user_health.score = Language.get_data(user_health_params[:body])  #この行を追加
     if @user_health.save
       redirect_to user_user_health_path(@user_health)
     else

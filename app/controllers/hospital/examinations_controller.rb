@@ -2,6 +2,7 @@ class Hospital::ExaminationsController < ApplicationController
 
   def new
     @examination = Examination.new
+    @user_id = params[:user_id]
   end
 
   def confirm
@@ -16,7 +17,13 @@ class Hospital::ExaminationsController < ApplicationController
   def create
     @examination = Examination.new(examination_params)
     @examination.hospital_id = current_hospital.id
-    @examination.user_id = params[:user_id]
+    # @examination.doctor = params[:doctor]
+    # @examination.date = params[:date]
+    # @examination.speciment = params[:speciment]
+    # @examination.result = params[:result]
+    # @examination.user_id = params[:user_id]
+    # @examination.save
+    # byebug
     if @examination.save
       redirect_to hospital_examination_path(@examination)
     else
@@ -39,7 +46,8 @@ class Hospital::ExaminationsController < ApplicationController
   private
 
   def examination_params
-    params.permit(:doctor, :date, :speciment, :result)
+    params.require(:examination).permit(:doctor, :date, :speciment, :result, :user_id, :hospital_id)
   end
 
 end
+
