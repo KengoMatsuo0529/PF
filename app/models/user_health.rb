@@ -8,5 +8,5 @@ class UserHealth < ApplicationRecord
   validates :condition, presence: true
   validates :transportation, presence: true
   validates :want_examination,  inclusion: { in: [true, false] }
-
+  
 end
