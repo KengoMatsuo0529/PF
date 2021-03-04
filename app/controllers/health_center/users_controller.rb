@@ -1,4 +1,8 @@
 class HealthCenter::UsersController < ApplicationController
+  
+  before_action :authenticate_health_center!
+
+  
   def index
     @messages = current_health_center.messages
     user_ids = @messages.map(&:user_id)

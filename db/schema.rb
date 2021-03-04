@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_051350) do
+ActiveRecord::Schema.define(version: 2021_03_04_091524) do
+
+  create_table "examinations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hospital_id"
+    t.boolean "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "doctor"
+    t.date "date"
+    t.string "speciment"
+  end
 
   create_table "health_centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +43,24 @@ ActiveRecord::Schema.define(version: 2021_02_21_051350) do
     t.index ["reset_password_token"], name: "index_health_centers_on_reset_password_token", unique: true
   end
 
+  create_table "hospitals", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "postcode"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
+    t.string "phone_number"
+    t.text "holiday"
+    t.index ["email"], name: "index_hospitals_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_hospitals_on_reset_password_token", unique: true
+  end
+
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
     t.integer "health_center_id"
@@ -43,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_051350) do
     t.integer "user_checked"
     t.integer "healthcenter_checked"
     t.integer "from"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -61,6 +91,8 @@ ActiveRecord::Schema.define(version: 2021_02_21_051350) do
     t.datetime "updated_at", null: false
     t.text "transportation"
     t.boolean "want_examination"
+    t.decimal "score", precision: 5, scale: 3
+    t.decimal "magnitude"
   end
 
   create_table "users", force: :cascade do |t|

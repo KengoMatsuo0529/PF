@@ -3,9 +3,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum gender: {
+    man: 0,
+    woman: 1
+  }
+
   has_many :user_healths
   has_many :rooms
   has_many :messages, dependent: :destroy
+  has_many :examinations ,dependent: :destroy
 
   has_many :active_notifications, class_name: 'Message', foreign_key: 'user_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Message', foreign_key: 'health_center_id', dependent: :destroy
@@ -40,9 +46,5 @@ class User < ApplicationRecord
   def full_name_kana
     self.last_name_kana + self.first_name_kana
   end
-
-  # def active_for_authentication?
-  #     super && (self.is_deleted == false)
-  # end
 
 end

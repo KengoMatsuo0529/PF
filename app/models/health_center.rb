@@ -7,6 +7,7 @@ class HealthCenter < ApplicationRecord
   has_many :user_healths
   has_many :rooms
   has_many :messages
+  has_many :examinations
   
   validates :name, presence: true
   validates :postcode, presence: true, length: { is: 7 }

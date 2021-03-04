@@ -9,9 +9,10 @@ ja:
   home: Home
   people_login: 個人のログイン
   health_center_login: 保健所のログイン
+  hospital_login: 検査所のログイン
   people_signin: こちら
-  people_signup: こちら 
-  sign_in: 新規登録
+  people_signup: こちら
+  sign_up: 新規登録
   log_in: ログイン
   log_out: ログアウト
   email: メールアドレス
@@ -24,10 +25,10 @@ ja:
   confirm_health: 健康状態の確認
   with_healthcenter: 保健所の検索とチャットによる
   can_contact: お問い合わせができます
-  your_healath: 自信の健康状態の報告ができます
+  your_healath: ご自身の健康状態の報告ができます
   my_page: ご自身の各種履歴や個人情報の
-  edit: 確認・更新ができます
-  user_search: 名前や電話番号で
+  edit2: 確認・更新ができます
+  user_search2: 名前や電話番号で
   with_name: 個人の検索ができます
   chats_index: チャットの対応はこちらからできます
   confirm_userhealth: 送信された健康状態の確認ができます
@@ -43,7 +44,7 @@ ja:
   you_can_chats: チャットボタンを押すことで問い合わせができます
   holiday: 休日
   lets_chat: チャットする
-  chat_page: チャット画面 
+  chat_page: チャット画面
   enter: エンターキーで送信ができます
   sent_my_condition: 健康状態を報告する
   condition_confirm: 健康状態の確認
@@ -60,8 +61,34 @@ ja:
   last_chat: チャットする
   edit: 編集
   edit_mypage: マイページの編集
+  withdrawal: 退会
+  last_name: 名前(苗字)
+  first_name: 名前(名前)
+  last_name_kana: フリガナ(苗字)
+  first_name_kana: フリガナ(名前)
+  postcode: 郵便番号(ハイフンなし)
+  address_city: 都道府県
+  address_street: 市区町村
+  address_building: 番地
+  update: 更新する
+  male: 男性
+  female: 女性
+  character: 文字以上
+  conf_pass: パスワード(確認用)
+  reset_pass: 再発行メールの送信
+  search: 検索
+  want: 希望する
+  none: 希望しない
+  confirm: 確認画面へ進む
+  sent: 送信する
+  tanaka: 田中
+  tarou: 太郎
+  tanaka_kana: タナカ
+  tarou_kana: タロウ
+  tokyo: 東京都
+  shibuya: 渋谷区
+  udagawa: 宇多川町1-1
 
-  
 
 
 
@@ -70,13 +97,6 @@ ja:
 
 
 
-
-
-
-
-
-
-  
 
 
   activerecord:

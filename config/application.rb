@@ -10,6 +10,7 @@ module HealthLink
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.paths.add 'lib', eager_load: true # 追加
     I18n.load_path += Dir[Rails.root.join('lib/locale/*.{rb,yml}')]
     # I18n.default_locale = :ja
     config.generators do |g|
