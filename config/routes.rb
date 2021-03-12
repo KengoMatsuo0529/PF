@@ -6,6 +6,18 @@ mount ActionCable.server => '/cable'
   devise_for :users
   devise_for :hospitals
 
+devise_scope :user do
+  post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+end
+
+devise_scope :health_center do
+  post 'health_centers/guest_sign_in', to: 'health_centers/sessions#new_guest'
+end
+
+devise_scope :hospital do
+  post 'hospitals/guest_sign_in', to: 'hospitals/sessions#new_guest'
+end
+
 
 scope "(:locale)", locale: /en|ja/ do
   root "user/homes#top"
@@ -37,7 +49,7 @@ namespace :health_center do
   resources :user_healths, only: [:index, :show]
   resources :examinations, only: [:index, :show]
   resources :hospitals, only: [:index, :show]
-
+  get "/examinations/search" => "examinations#search"
 
 
 end

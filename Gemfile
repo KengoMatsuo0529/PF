@@ -79,6 +79,7 @@ gem 'font-awesome-rails'
 gem 'pry-byebug', group: :development
 gem 'rails4-autocomplete'
 gem 'rails-i18n'
+gem 'parser', '~> 2.6.3'
 
 
 gem 'dotenv-rails'
