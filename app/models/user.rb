@@ -46,5 +46,12 @@ class User < ApplicationRecord
   def full_name_kana
     self.last_name_kana + self.first_name_kana
   end
+  
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', last_name: "田中", first_name: "太郎", last_name_kana: "タナカ", first_name_kana: "タロウ", postcode: "1234567", address_city: "東京都", address_street: "渋谷区", address_building: "神南1丁目19-11", phone_number: "08034268377", gender: "man", age: "27", is_deleted: "false") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 
 end

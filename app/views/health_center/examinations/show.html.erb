@@ -12,7 +12,7 @@
       </tr>
       <tr>
         <th>被検者氏名</th>
-        <td><%= @examination.user.full_name %></td>
+        <td><%= link_to @examination.user.full_name, health_center_user_path(@user) %></td>
       </tr>
       <tr>
         <th>被験者年齢</th>

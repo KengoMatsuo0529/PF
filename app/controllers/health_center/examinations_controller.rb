@@ -6,6 +6,7 @@ class HealthCenter::ExaminationsController < ApplicationController
 
   def show
     @examination = Examination.find(params[:id])
+    @user = @examination.user
   end
-  
+
 end

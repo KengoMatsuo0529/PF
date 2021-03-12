@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mx-auto my-4">
-    <h2 class="title">ログイン</h2>
+    <h2 class="title">検査所のログイン</h2>
   </div>
 
 <div class="container center-contents pt-2">
@@ -20,7 +20,8 @@
   <% end %>
 </div>
   <div class="pl-5">
-    登録がお済みでない方は <%= link_to "こちら", new_registration_path(resource_name) %><br />
+    <%= link_to 'ゲストログイン（閲覧用）', hospitals_guest_sign_in_path, method: :post %><br />
+    <br />登録がお済みでない方は <%= link_to "こちら", new_registration_path(resource_name) %><br />
     <br/><%= render "hospitals/shared/links" %>
   </div>
 </div>

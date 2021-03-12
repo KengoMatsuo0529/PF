@@ -3,6 +3,11 @@
 class Hospitals::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
+  def new_guest
+    hospital = Hospital.guest
+    sign_in hospital
+    redirect_to root_path, notice: 'ゲストとしてログインしました。'
+  end
   # GET /resource/sign_in
   # def new
   #   super

@@ -12,7 +12,7 @@ User.create!(
   first_name: "健吾",
   last_name_kana: "マツオ",
   first_name_kana: "ケンゴ",
-  email: "test@test.com",
+  email: "test@test",
   password: "012345",
   postcode: "1234567",
   address_city: "東京都",
@@ -25,17 +25,22 @@ User.create!(
   )
 
 HealthCenter.create!(
-    name: "大田区保健所",
+    name: "練馬区保健所",
     postcode: "1234567",
     address_city: "東京都",
-    address_street: "大田区",
-    address_building: "西嶺町23",
-    phone_number: "0337560529",
+    address_street: "練馬区",
+    address_building: "大井町",
+    phone_number: "0337560522",
     corporate_number: "1234567891234",
     holiday: "土曜日",
-    email: "a@a",
+    email: "guest@hokenzyo",
     password: "012345"
     )
+
+Hospital.create!(
+  email: "test@byouin",
+  password: "012345"
+  )
 
 UserHealth.create!(
   user_id: 1,
@@ -43,7 +48,8 @@ UserHealth.create!(
   temperature: "37.2",
   condition: "頭痛・鼻水",
   transportation: "自転車",
-  want_examination: "false"
+  want_examination: "false",
+  magnitude: "0.8"
   )
 
 Room.create!(
@@ -60,5 +66,14 @@ Message.create!(
   user_checked: "1",
   healthcenter_checked: "1",
   from: 0
+  )
+
+Examination.create!(
+  user_id: 1,
+  hospital_id: 1,
+  doctor: "葛西潤",
+  date: 2021/3/21,
+  speciment: "唾液",
+  result: "True"
   )
 

@@ -2,7 +2,11 @@
 
 class HealthCenters::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  def new_guest
+    health_center = HealthCenter.guest
+    sign_in health_center
+    redirect_to root_path, notice: 'ゲストとしてログインしました。'
+  end
   # GET /resource/sign_in
   # def new
   #   super
