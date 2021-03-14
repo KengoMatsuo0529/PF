@@ -10,6 +10,7 @@ ja:
   people_login: 個人のログイン
   health_center_login: 保健所のログイン
   hospital_login: 検査所のログイン
+  hospital_login: 検査所のログイン
   people_signin: こちら
   people_signup: こちら
   sign_up: 新規登録
@@ -88,6 +89,7 @@ ja:
   tokyo: 東京都
   shibuya: 渋谷区
   udagawa: 宇多川町1-1
+  guest_login: ゲストログイン（閲覧用）
 
 
 
