@@ -47,7 +47,7 @@
                 <% end %>
               </li>
               <li class="nav-item mx-4 mt-5">
-                <%= link_to "検査結果一覧", health_center_examinations_path, class: 'nav-link text-white' %>
+                <%= link_to health_center_examinations_path, class: 'nav-link text-white' do %><%= t :hospital_login %><% end %>
               </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to destroy_health_center_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>

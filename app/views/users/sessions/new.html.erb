@@ -21,7 +21,7 @@
   </div>
 
     <div class="pl-5 signup-link">
-      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %><br />
+      <%= link_to users_guest_sign_in_path, method: :post do %><%= t :guest_login %><% end %><br />
       <br /><%= t :if_not_signin %> <%= link_to new_registration_path(resource_name) do %><%= t :people_signin %><% end %><br />
       <br/><div class="pass-change"><%= render "users/shared/links" %></div>
     </div>
