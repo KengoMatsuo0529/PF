@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title">検査結果の作成</h2>
+  </div>
+
+    <div class="container center-contents pt-5">
+      <div class="form my-2">
+        <%= form_with url: hospital_examination_confirm_path, method: :post, local:true do |f| %>
+          <div class="form-group px-5">
+            <%= f.label :doctor, "医師名" %>
+            <%= f.text_field :doctor, class: "form-control", placeholder: "葛西 潤" %>
+          </div>
+          <div class="form-group px-5">
+            <%= f.label :date, "検査日" %>
+            <%= f.date_field :date, class: "form-control" %>
+          </div>
+          <div class="form-group px-5">
+            <%= f.label :speciment, "検体" %>
+            <%= f.text_field :speciment, class: "form-control", placeholder: "唾液" %>
+          </div>
+          <div class = "form-group row px-5">
+            <%= f.label :result, "検査結果", class: "col-3" %>
+            <%= f.select :result, [["陽性",1],["陰性",0]] %>
+          </div>
+
+          <%= f.hidden_field :user_id, value: @user_id %>
+
+          <div class="d-flex justify-content-end pr-5">
+            <%= f.submit "確認する", class: "confirm-button" %>
+        <% end %>
+          </div>
+      </div>
+    </div>
+</div>

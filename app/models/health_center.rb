@@ -7,6 +7,7 @@ class HealthCenter < ApplicationRecord
   has_many :user_healths
   has_many :rooms
   has_many :messages
+  has_many :examinations
   
   validates :name, presence: true
   validates :postcode, presence: true, length: { is: 7 }
@@ -23,6 +24,13 @@ class HealthCenter < ApplicationRecord
         HealthCenter.where(['address_street LIKE?', "%#{search}%"])
     else
         HealthCenter.all
+    end
+  end
+  
+  def self.guest
+    find_or_create_by!(email: 'gest@hokenzyo', name: "新宿区保健所", postcode: "1234567",address_city: "東京都",address_street: "新宿区",address_building: "歌舞伎町3-4", phone_number: "0337565526",corporate_number: "1234567891234",holiday: "土曜日") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end
   

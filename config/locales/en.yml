@@ -39,6 +39,7 @@ en:
   home: Home
   people_login: User Login
   health_center_login: HealthCenter Login
+  hospital_login: Hospital 
   people_signin: HERE
   people_signup: HERE
   sign_up: SignUp
@@ -117,6 +118,7 @@ en:
   tokyo: Tokyo
   shibuya: Shibuya
   udagawa: Udagawa1-1
+  hospital_login: 
 
 
 

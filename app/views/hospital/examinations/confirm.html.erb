@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title">検査結果の確認画面</h2>
+  </div>
+  
+      <% if @examination.errors.any? %>
+     <p class="validates-errors">入力に誤りがあります</p>
+    <% end %>
+
+  <div class="container center-contents pt-3">
+    <div class="row mt-5 pt-3 mb-2">
+      <table class="table table-hover show-list">
+        <%= form_with model: @examination, url: hospital_examinations_path, method: :post, local:true do |f| %>
+      <tr>
+        <th class="confirm_list">被検者氏名</th>
+        <td><%= @examination.user.full_name %></td>
+      </tr>
+      <tr>
+        <th class="confirm_list">被検者年齢</th>
+        <td><%= @examination.user.age %></td>
+      </tr>
+       <tr>
+        <th class="confirm_list">検査実施日</th>
+        <td><%= @examination.date %></td>
+      </tr>
+      <tr>
+        <th class="confirm_list">医師名</th>
+        <td><%= @examination.doctor %></td>
+      </tr>
+      <tr>
+        <th class="confirm_list">検体</th>
+        <td><%= @examination.speciment %></td>
+      </tr>
+      <tr>
+        <th class="confirm_list">検査結果</th>
+        <td><%= @examination.result ? "陽性" : "陰性" %></td>
+      </tr>
+    </table>
+    </div>
+      <%= f.hidden_field :doctor, value: @examination.doctor %>
+      <%= f.hidden_field :date, value: @examination.date %>
+      <%= f.hidden_field :speciment, value: @examination.speciment %>
+      <%= f.hidden_field :result, value: @examination.result %>
+      <%= f.hidden_field :user_id, value: @examination.user_id %>
+
+    <div class="d-flex justify-content-end pr-5 mr-2 pb-2">
+      <%= f.submit "送信", class:"btn btn-success" %>
+      <%end%>
+    </div>
+  </div>
+</div>

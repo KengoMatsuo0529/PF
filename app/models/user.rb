@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :user_healths
   has_many :rooms
   has_many :messages, dependent: :destroy
+  has_many :examinations ,dependent: :destroy
 
   has_many :active_notifications, class_name: 'Message', foreign_key: 'user_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Message', foreign_key: 'health_center_id', dependent: :destroy
@@ -45,9 +46,12 @@ class User < ApplicationRecord
   def full_name_kana
     self.last_name_kana + self.first_name_kana
   end
-
-  # def active_for_authentication?
-  #     super && (self.is_deleted == false)
-  # end
+  
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', last_name: "田中", first_name: "太郎", last_name_kana: "タナカ", first_name_kana: "タロウ", postcode: "1234567", address_city: "東京都", address_street: "渋谷区", address_building: "神南1丁目19-11", phone_number: "08034268377", gender: "man", age: "27", is_deleted: "false") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 
 end

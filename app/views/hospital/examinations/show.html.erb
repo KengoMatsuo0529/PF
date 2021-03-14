@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row mx-auto my-4">
+    <h2 class="title">検査履歴の詳細</h2>
+  </div>
+
+<div class="container center-contents pt-3">
+  <div class="row my-5 pt-3">
+    <table class="table table-hover show-list">
+      <tr>
+        <th>検査番号</th>
+        <td><%= @examination.id %></td>
+      </tr>
+      <tr>
+        <th>被検者氏名</th>
+        <td><%= link_to @examination.user.full_name, hospital_user_path(@user) %></td>
+      </tr>
+      <tr>
+        <th>検査実施日</th>
+        <td><%= @examination.date %></td>
+      </tr>
+      <tr>
+        <th>医師名</th>
+        <td><%= @examination.doctor %></td>
+      </tr>
+      <tr>
+        <th>検体</th>
+        <td><%= @examination.speciment %></td>
+      </tr>
+      <tr>
+        <th>検査希望</th>
+        <td><%= @examination.result ? "陽性" : "陰性" %></td>
+      </tr>
+      <tr>
+        <th>送信日</th>
+        <td><%= @examination.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
