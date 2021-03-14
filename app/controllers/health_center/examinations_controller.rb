@@ -1,7 +1,7 @@
 class HealthCenter::ExaminationsController < ApplicationController
 
   def index
-    @examinations = Examination.all
+    @examinations = Examination.all.page(params[:page]).per(6)
   end
 
   def show

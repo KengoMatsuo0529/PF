@@ -28,7 +28,7 @@ class HealthCenter < ApplicationRecord
   end
   
   def self.guest
-    find_or_create_by!(email: 'otaku@hokenzyo', name: "大田区保健所", postcode: "1234567",address_city: "東京都",address_street: "大田区",address_building: "西嶺町23", phone_number: "0337560526",corporate_number: "1234567891234",holiday: "土曜日") do |user|
+    find_or_create_by!(email: 'gest@hokenzyo', name: "新宿区保健所", postcode: "1234567",address_city: "東京都",address_street: "新宿区",address_building: "歌舞伎町3-4", phone_number: "0337565526",corporate_number: "1234567891234",holiday: "土曜日") do |user|
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end

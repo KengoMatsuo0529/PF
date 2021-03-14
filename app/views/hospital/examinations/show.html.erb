@@ -12,11 +12,7 @@
       </tr>
       <tr>
         <th>被検者氏名</th>
-        <td><%= @examination.user.full_name %></td>
-      </tr>
-      <tr>
-        <th>被験者年齢</th>
-        <td><%= @examination.user.age %></td>
+        <td><%= link_to @examination.user.full_name, hospital_user_path(@user) %></td>
       </tr>
       <tr>
         <th>検査実施日</th>

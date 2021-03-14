@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_091524) do
+ActiveRecord::Schema.define(version: 2021_03_14_132747) do
 
   create_table "examinations", force: :cascade do |t|
     t.integer "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_091524) do
     t.string "address_building"
     t.string "phone_number"
     t.text "holiday"
+    t.text "name"
     t.index ["email"], name: "index_hospitals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_hospitals_on_reset_password_token", unique: true
   end

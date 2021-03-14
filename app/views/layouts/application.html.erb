@@ -59,6 +59,9 @@
               <li class="nav-item  pr-4 pl-5 pt-4">
                   <p class="mt-4"><%= link_to hospital_health_centers_path, class: "nav-link text-white" do %><%= t :search_healthcenter %><% end %></p>
               </li>
+                  <li class="nav-item mx-4 mt-5">
+                <%= link_to "検査結果一覧", hospital_examinations_path, class: 'nav-link text-white' %>
+              </li>
               <li class="nav-item mx-4 pt-5">
                 <%= link_to destroy_hospital_session_path, method: :delete, class: 'nav-link text-white' do %><%= t :log_out %><% end %>
               </li>

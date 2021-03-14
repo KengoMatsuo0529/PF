@@ -17,13 +17,6 @@ class Hospital::ExaminationsController < ApplicationController
   def create
     @examination = Examination.new(examination_params)
     @examination.hospital_id = current_hospital.id
-    # @examination.doctor = params[:doctor]
-    # @examination.date = params[:date]
-    # @examination.speciment = params[:speciment]
-    # @examination.result = params[:result]
-    # @examination.user_id = params[:user_id]
-    # @examination.save
-    # byebug
     if @examination.save
       redirect_to hospital_examination_path(@examination)
     else
@@ -32,11 +25,12 @@ class Hospital::ExaminationsController < ApplicationController
   end
 
   def index
-    @examinations = current_hospital.examinations
+    @examinations = current_hospital.examinations.page(params[:page]).per(6)
   end
 
   def show
     @examination = Examination.find(params[:id])
+    @user = @examination.user
   end
 
   def error

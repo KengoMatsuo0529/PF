@@ -4,7 +4,7 @@
   </div>
 
 <div class="container center-contents pt-3">
-  <div class="row my-5 pt-2">
+  <div class="row my-5 pt-2 pl-5">
     <div class="datagrid mx-auto">
       <table>
         <thead>
@@ -18,15 +18,7 @@
           <tr>
             <td colspan="4">
               <div id="paging">
-                <ul>
-                  <li><a href="#"><span>Previous</span></a></li>
-                  <li><a href="#" class="active"><span>1</span></a></li>
-                  <li><a href="#"><span>2</span></a></li>
-                  <li><a href="#"><span>3</span></a></li>
-                  <li><a href="#"><span>4</span></a></li>
-                  <li><a href="#"><span>5</span></a></li>
-                  <li><a href="#"><span>Next</span></a></li>
-                </ul>
+                 <%= paginate @examinations %>
               </div>
             </td>
           </tr>
@@ -36,7 +28,7 @@
           <tr>
           <td><%= link_to examination.user.last_name + examination.user.first_name, hospital_examination_path(examination) %></td>
           <td><%= examination.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
-          <td><%= examination.result %></td>
+          <td><%= examination.result ? "陽性" : "陰性" %></td>
           </tr>
           <% end %>
         </tbody>
