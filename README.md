@@ -61,11 +61,8 @@ http://54.248.169.153/
 ・レスポンシブデザイン
 　こちらも幅広いユーザーを想定し実装致しました。
 
-<img width="300" src="https://user-images.githubusercontent.com/73770617/111098628-3f0fa080-8587-11eb-9b3d-d89eb462bc96.png">
+<img width="300" src="https://user-images.githubusercontent.com/73770617/111098628-3f0fa080-8587-11eb-9b3d-d89eb462bc96.png">　<img width="300" src="https://user-images.githubusercontent.com/73770617/111097004-091ced00-8584-11eb-8d6e-31b0bdc7e317.png">　<img width="300" src="https://user-images.githubusercontent.com/73770617/111097128-47b2a780-8584-11eb-857f-250d8cd370a8.png">
 
-<img width="300" src="https://user-images.githubusercontent.com/73770617/111097004-091ced00-8584-11eb-8d6e-31b0bdc7e317.png">
-
-<img width="300" src="https://user-images.githubusercontent.com/73770617/111097128-47b2a780-8584-11eb-857f-250d8cd370a8.png">
 
 詳細は下記をご覧ください
 
