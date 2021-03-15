@@ -26,6 +26,8 @@
             <%= f.label :want_examination, "#{ t :want_examination }", class: "col-3" %>
             <%= f.select :want_examination, [["#{ t :want }",1],["#{ t :none }",0]] %>
           </div>
+            <%= f.hidden_field :health_center_id, :value => params[:health_center_id] %>
+
           <div class="d-flex justify-content-end pr-5">
             <%= f.submit "#{ t :confirm }", class: "confirm-button" %>
         <% end %>

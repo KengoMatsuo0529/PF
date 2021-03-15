@@ -28,7 +28,6 @@ class User::UserHealthsController < ApplicationController
     elsif params[:want_examination] == "0"
       want_examination_value = false
     end
-    @user_health.health_center_id = params[:health_center_id]
     @user_health.user_id = current_user.id
     @user_health.magnitude = Language.get_data(user_health_params[:condition])  #この行を追加
     if @user_health.save
@@ -53,7 +52,7 @@ class User::UserHealthsController < ApplicationController
   private
 
   def user_health_params
-    params.require(:user_health).permit(:temperature, :condition, :transportation, :want_examination , :health_center_id)
+    params.require(:user_health).permit(:temperature, :condition, :transportation, :want_examination, :health_center_id)
   end
 
 end
