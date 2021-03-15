@@ -48,7 +48,7 @@ http://54.248.169.153/
 ・通知機能
 　未読のメッセージがあればヘッダーにマーク
 　メッセージを見たタイミングで通知が消えるよう実装しました。
-　
+
 ・検索機能
 　ユーザーは自分が住んでいる市区町村を入れることで対応した保健所が
 　保健所は名前をカナ検索か電話番号でユーザーが
@@ -57,15 +57,15 @@ http://54.248.169.153/
 ・多言語化
 　今回はあらゆるユーザーを想定し、個人が利用する全ページで多言語を実装しました。
 　URLの末尾に/en を入れることで英語に変換できます。
-　
+
 ・レスポンシブデザイン
 　こちらも幅広いユーザーを想定し実装致しました。
 
-<img width="338" alt="スクリーンショット 2021-02-26 15 24 41" src="https://user-images.githubusercontent.com/73770617/111096813-bc391680-8583-11eb-8d0b-817ad030b57b.png">
+<img width="300" src="https://user-images.githubusercontent.com/73770617/111098628-3f0fa080-8587-11eb-9b3d-d89eb462bc96.png">
 
-<img width="340" alt="スクリーンショット 2021-02-26 15 07 29" src="https://user-images.githubusercontent.com/73770617/111097004-091ced00-8584-11eb-8d6e-31b0bdc7e317.png">
+<img width="300" src="https://user-images.githubusercontent.com/73770617/111097004-091ced00-8584-11eb-8d6e-31b0bdc7e317.png">
 
-<img width="337" alt="スクリーンショット 2021-02-26 15 12 36" src="https://user-images.githubusercontent.com/73770617/111097128-47b2a780-8584-11eb-857f-250d8cd370a8.png">
+<img width="300" src="https://user-images.githubusercontent.com/73770617/111097128-47b2a780-8584-11eb-857f-250d8cd370a8.png">
 
 詳細は下記をご覧ください
 
