@@ -53,7 +53,7 @@ class User::UserHealthsController < ApplicationController
   private
 
   def user_health_params
-    params.require(:user_health).permit(:temperature, :condition, :transportation, :want_examination)
+    params.require(:user_health).permit(:temperature, :condition, :transportation, :want_examination , :health_center_id)
   end
 
 end
