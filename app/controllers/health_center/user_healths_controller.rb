@@ -3,7 +3,7 @@ class HealthCenter::UserHealthsController < ApplicationController
   before_action :authenticate_health_center!
 
   def index
-    @user_healths = UserHealth.page(params[:page])
+    @user_healths = UserHealth.search(params[:search]).page(params[:page])
   end
 
   def show
