@@ -2,11 +2,13 @@ class HealthCenter::RoomsController < ApplicationController
   before_action :authenticate_health_center!
 
   def index
-    @messages = current_health_center.messages
-    room_ids = @messages.map(&:user_id)
-    @rooms = Room.where(id: room_ids).search(current_health_center.id, params[:search]).distinct
+    # @messages = current_health_center.messages
+    # room_ids = @messages.map(&:user_id)
+    # @rooms = Room.where(id: room_ids).search(current_health_center.id, params[:search]).distinct
     @health_center = current_health_center
-    # @room = 
+    #上記は「この保健所に紐づいた」ルーム一覧
+    @rooms = Room.search(params[:search]).distinct.page(params[:page]).per(6)
+    
   end
 
   def show
