@@ -17,9 +17,9 @@ class User::RoomsController < ApplicationController
     @health_center = HealthCenter.find(params[:health_center_id])
     # gon.user_kind =  if user_signed_in?
 		  #                   'user'
-	   #                 else 
+	   #                 else
 		  #                   'healthceter'
-	   #                  end 
+	   #                  end
   end
 
   # private
