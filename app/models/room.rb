@@ -25,7 +25,7 @@ class Room < ApplicationRecord
     notification.save if notification.valid?
   end
 
-  def self.search(search)
+  def self.search(id, search)
     if search
       Room.left_joins(:messages).where(health_center_id: id).where(['message LIKE?', "%#{search}%"]).distinct
     else

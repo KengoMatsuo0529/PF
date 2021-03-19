@@ -7,6 +7,6 @@ class Examination < ApplicationRecord
   validates :doctor, presence: true
   validates :date, presence: true
   validates :speciment, presence: true
-  validates :result, presence: true
+  validates :result, inclusion: { in: [true, false] }
 
 end
