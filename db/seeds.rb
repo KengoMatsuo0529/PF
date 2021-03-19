@@ -421,8 +421,8 @@ Examination.create!(
   user_id: 1,
   hospital_id: 1,
   doctor: "葛西潤",
-  date: 2021/3/21,
   speciment: "唾液",
-  result: "True"
+  result: "True",
+  date: "2021-03-19 06:41:19"
   )
 
