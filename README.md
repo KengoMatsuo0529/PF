@@ -76,7 +76,6 @@ https://docs.google.com/spreadsheets/d/1vQ8D_Ov_WJ1GSslXB0YgrPfecqP0SI0HKlC1Fzvx
 
 フロントエンド
 ・Bootstrap 4.5.0
-・SCSS
 ・JavaScript、jQuery
 
 バックエンド
