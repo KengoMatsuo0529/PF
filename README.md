@@ -88,7 +88,8 @@ https://docs.google.com/spreadsheets/d/1vQ8D_Ov_WJ1GSslXB0YgrPfecqP0SI0HKlC1Fzvx
 本番環境
 AWS (EC2、RDS for MySQL、S3)
 MySQL2
-Nginx、 Puma
+Nginx、
+Puma
 
 その他利用技術
 チーム開発を意識したGitHubの活用 （プルリク、マージ）
